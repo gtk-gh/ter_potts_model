@@ -1,7 +1,9 @@
 #include <iostream>
+#include "point.h"
+using namespace std;
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
-    1+1;
+    point A;
+    A = point(1,2);
     return 0;
 }
