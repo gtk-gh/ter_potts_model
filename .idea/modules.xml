@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/cpp_script.iml" filepath="$PROJECT_DIR$/.idea/cpp_script.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/ter_potts_model.iml" filepath="$PROJECT_DIR$/.idea/ter_potts_model.iml" />
     </modules>
   </component>
 </project>
