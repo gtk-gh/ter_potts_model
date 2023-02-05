@@ -1,2 +1,2 @@
-def test(a):
-    return 0
+def somme(a,b):
+    return a+b
