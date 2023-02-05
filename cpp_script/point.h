@@ -12,12 +12,27 @@ private :
     int x;
     int y;
     int etat;
-    vector<point> voisin;
+
+    struct voisinage
+    {
+        point* gauche;
+        point* droite;
+        point* nord;
+        point* sud;
+    };
+    voisinage voisin;
 
 public:
     point() {this->x = 0; this->y = 0;this->etat = 0;};
     point(int,int);
     point(int,int,int);
+
+    int getX();
+    int getY();
+    int getEtat();
+    void changeEtat(int);
+    void addVoisin(point &, string);
+    point giveVoisin(string);
 };
 
 #endif //CPP_SCRIPT_POINT_H
