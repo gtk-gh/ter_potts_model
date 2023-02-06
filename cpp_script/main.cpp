@@ -8,5 +8,6 @@ int main() {
     int x;
     x = A.getEtat();
     cout << x;
+
     return 0;
 }

@@ -30,9 +30,14 @@ public:
     int getX();
     int getY();
     int getEtat();
+
     void changeEtat(int);
+    void changeX(int);
+
     void addVoisin(point &, string);
-    point giveVoisin(string);
+    point& giveVoisin(string);
+
+    point& operator = (const point&);
 };
 
 #endif //CPP_SCRIPT_POINT_H

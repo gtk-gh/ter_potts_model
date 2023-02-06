@@ -35,10 +35,25 @@ void point::changeEtat(int e) {
     this->etat = e;
 }
 
+void point::changeX(int x2){
+    this->x = x2;
+}
+
 void point::addVoisin(point & p, string dir) {
     if (dir == "g") this->voisin.gauche = & p;
 }
 
-point point::giveVoisin(string dir){
-    if (dir == "g") return this->voisin.gauche;
+point& point::giveVoisin(string dir){
+    //if (dir == "g")
+        return (*this->voisin.gauche);
+
+}
+
+point& point::operator = (const point& A)
+{
+    this->x = A.x;
+    this->y = A.y;
+    this->etat = A.etat;
+    this->voisin = A.voisin;
+    return (*this);
 }
