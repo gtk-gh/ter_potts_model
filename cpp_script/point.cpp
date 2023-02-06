@@ -39,14 +39,17 @@ void point::changeX(int x2){
     this->x = x2;
 }
 
+void point::changeY(int y2){
+    this->y = y2;
+}
+
 void point::addVoisin(point & p, string dir) {
     if (dir == "g") this->voisin.gauche = & p;
 }
 
-point& point::giveVoisin(string dir){
+point point::getVoisin(string dir){
     //if (dir == "g")
-        return (*this->voisin.gauche);
-
+        return *(this->voisin.gauche);
 }
 
 point& point::operator = (const point& A)
@@ -56,4 +59,13 @@ point& point::operator = (const point& A)
     this->etat = A.etat;
     this->voisin = A.voisin;
     return (*this);
+}
+
+ostream& operator << (ostream& s,  point & P){
+    int x,y,e;
+    x = P.getX();
+    y = P.getY();
+    e = P.getEtat();
+    s <<"("<< x << "," << y << "," << e<<")";
+    return s;
 }

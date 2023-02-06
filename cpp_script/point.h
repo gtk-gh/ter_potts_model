@@ -27,17 +27,19 @@ public:
     point(int,int);
     point(int,int,int);
 
-    int getX();
-    int getY();
-    int getEtat();
+    int getX(); // renvoie la coordonnée x
+    int getY(); // renvoie la coordonnée y
+    int getEtat(); // renvoie l'état
 
-    void changeEtat(int);
-    void changeX(int);
+    void changeEtat(int); // change l'état du point
+    void changeX(int); // change la coord x
+    void changeY(int); // change la coord y
 
-    void addVoisin(point &, string);
-    point& giveVoisin(string);
+    void addVoisin(point &, string); // ajoute un voisin
+    point getVoisin(string);
 
     point& operator = (const point&);
+    friend ostream& operator << (ostream&, point &);
 };
 
 #endif //CPP_SCRIPT_POINT_H
