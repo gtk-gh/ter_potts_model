@@ -1,5 +1,5 @@
 #include <iostream>
-#include "point.h"
+#include "matrice.h"
 using namespace std;
 
 int main() {
