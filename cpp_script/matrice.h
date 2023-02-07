@@ -19,7 +19,6 @@ public:
 
     point& operator() (int , int) const; // Renvoie le point i,j
     matrice& operator = (const matrice&); // surcharge de = (affectation)
-    point& operator() (int , int) const; // Renvoie le point i,j
     matrice transpose();    // transpose une matrice
 
     friend ostream& operator <<(ostream&, matrice&);
