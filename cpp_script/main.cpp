@@ -8,7 +8,9 @@ int main() {
     int x;
     x = A.getEtat();
     matrice M = matrice(10,10);
-    cout << M;
-    //save_matr("test",M);
+    matrice N;
+    N = M;
+    cout << N;
+    matrice T = N.transpose();
     return 0;
 }
