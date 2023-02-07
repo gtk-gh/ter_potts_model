@@ -7,7 +7,18 @@
 #include "point.h"
 
 class matrice {
+private:
+    int size1;  // dimension des lignes de la matrice
+    int size2;  // dimension des colonnes de la matrice
+    vector<point>* matrix;     // chaque ligne de la matrice est un vecteur de points
 
+public:
+    matrice() {this -> size1 = this -> size2 = 0;}; // on initialise la taille de la matrice à 0
+    matrice(int,int);   // Affecte deux entiers à size1,2 de la matrice et initialise les coefficients à 0
+
+    point& operator() (int , int); // Renvoie le point i,j
+
+    friend ostream& operator <<(ostream&, matrice&);
 };
 
 
