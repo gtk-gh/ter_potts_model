@@ -26,6 +26,7 @@ public:
     point() {this->x = 0; this->y = 0;this->etat = 0;};
     point(int,int);
     point(int,int,int);
+    //~point();
 
     int getX(); // renvoie la coordonnée x
     int getY(); // renvoie la coordonnée y

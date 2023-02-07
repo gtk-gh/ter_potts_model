@@ -21,7 +21,7 @@ matrice :: matrice(int n, int m){
 }
 
 // Retourne le coefficient (i,j)
-point& matrice::operator() (int i, int j)
+point& matrice::operator() (int i, int j) const
 {
     return this -> matrix[i][j];
 }
@@ -36,4 +36,19 @@ ostream& operator <<(ostream& s, matrice& M){
     }
 
     return s;
+}
+
+void save_matr(const char* Nomfich, const matrice & mat){
+    ofstream fichier;
+    fichier.open(Nomfich); // ouverture du fichier
+
+    assert(mat.size1>0 && mat.size2>0);
+    fichier << mat.size1 << "\n" << mat.size2 << "\n";
+    for (int i=0; i<mat.size1 ; i++){
+        for (int j = 0 ; j < mat.size2-1 ; j++){
+            fichier << mat(i,j).getEtat() << " ";
+        }
+        fichier << mat(i,mat.size2-1).getEtat() << "\n";
+    }
+    fichier.close();           // fermature du fichier
 }

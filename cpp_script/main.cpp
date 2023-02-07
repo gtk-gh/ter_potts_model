@@ -9,5 +9,6 @@ int main() {
     x = A.getEtat();
     matrice M = matrice(10,10);
     cout << M;
+    //save_matr("test",M);
     return 0;
 }
