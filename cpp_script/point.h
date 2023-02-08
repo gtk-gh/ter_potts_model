@@ -11,7 +11,7 @@ class point
 private :
     int x;
     int y;
-    int etat;
+    double etat;
 
     struct voisinage
     {
@@ -25,14 +25,14 @@ private :
 public:
     point() {this->x = 0; this->y = 0;this->etat = 0;};
     point(int,int);
-    point(int,int,int);
+    point(int,int,double);
     //~point();
 
     int getX(); // renvoie la coordonnée x
     int getY(); // renvoie la coordonnée y
-    int getEtat(); // renvoie l'état
+    double getEtat(); // renvoie l'état
 
-    void changeEtat(int); // change l'état du point
+    void changeEtat(double); // change l'état du point
     void changeX(int); // change la coord x
     void changeY(int); // change la coord y
 

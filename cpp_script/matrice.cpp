@@ -20,6 +20,24 @@ matrice :: matrice(int n, int m){
     }
 }
 
+matrice::matrice(int n,int m ,vector<double> etat){
+    srand (time(NULL));
+    this ->size1 = n;
+    this ->size2 = m;
+    this -> matrix = new vector<point>[n];
+    vector<point> v(m);
+    for (int i = 0; i<n; i++){
+        this -> matrix[i] = v;
+        for (int j = 0; j<m; j++){
+            point temp;
+            int randEtat;
+            randEtat = rand() % etat.size();
+            temp = point(i,j,etat[randEtat]);
+            this -> matrix[i][j] = temp;
+        }
+    }
+}
+
 // Destructeur
 matrice::~matrice()
 {

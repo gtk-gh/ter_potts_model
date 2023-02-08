@@ -13,7 +13,7 @@ point::point(int x, int y){
     this->etat = 0;
 }
 
-point::point(int x, int y,int etat){
+point::point(int x, int y,double etat){
     this->x = x;
     this->y = y;
     this->etat = etat;
@@ -27,11 +27,11 @@ int point::getY() {
     return this->y;
 }
 
-int point::getEtat() {
+double point::getEtat() {
     return this->etat;
 }
 
-void point::changeEtat(int e) {
+void point::changeEtat(double e) {
     this->etat = e;
 }
 
@@ -62,7 +62,8 @@ point& point::operator = (const point& A)
 }
 
 ostream& operator << (ostream& s,  point & P){
-    int x,y,e;
+    int x,y;
+    double e;
     x = P.getX();
     y = P.getY();
     e = P.getEtat();
