@@ -98,3 +98,9 @@ void save_matr(const char* Nomfich, const matrice & mat){
     }
     fichier.close();           // fermature du fichier
 }
+
+int sommet(matrice& M, point& x){
+    int n = M.size1;
+    int m = M.size2;
+    return x.getX()*n+x.getY()+1;
+}

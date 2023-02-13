@@ -27,6 +27,7 @@ public:
     friend ostream& operator <<(ostream&, matrice&);
     friend void save_matr(const char*, const matrice &);
     friend ostream& operator <<(ostream&, matrice&); // Affichage matrice
+    friend int sommet(matrice&,point&); // Renvoi le numéro du sommet
 };
 
 
