@@ -3,10 +3,7 @@
 using namespace std;
 
 int main() {
-    vector<double> etat(3);
-    etat[0] = 0;
-    etat[1] = 1;
-    etat[2] = 1.5;
+    vector<double> etat({0,1,2,3,4});
     matrice M = matrice(10,10,etat);
     cout << M;
     //save_matr("../../py_script/mat.txt",M);
