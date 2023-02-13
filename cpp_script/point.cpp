@@ -87,3 +87,8 @@ double delta(point& x1, point& x2){
     if (x1.getEtat() == x2.getEtat()){return(1);}
     else return 0;
 }
+
+double z(point& p, double etat){
+    if(p.getEtat() == etat){return 1;}
+    else return 0;
+}
