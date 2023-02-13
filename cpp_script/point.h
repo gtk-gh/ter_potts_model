@@ -40,7 +40,12 @@ public:
     point getVoisin(string);
 
     point& operator = (const point&);
+    point& operator + (point&); // renvoi la somme de deux points
+
     friend ostream& operator << (ostream&, point &);
+    friend double p_scalaire(point&, point&);   // produit scalaire
+    friend double delta(point&, point&);    //delta = 1 si deux sommets sont dans le mm état, 0 sinon
+    friend double z(point&,double); // z = 1 si le sommet i est dans l'état k
 };
 
 #endif //CPP_SCRIPT_POINT_H
