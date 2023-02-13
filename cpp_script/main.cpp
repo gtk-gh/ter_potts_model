@@ -13,5 +13,6 @@ int main() {
     cout << endl << M(0,0);
     M(0,0).changeEtat(2222);
     cout << M;
+
     return 0;
 }

@@ -70,3 +70,20 @@ ostream& operator << (ostream& s,  point & P){
     s <<"("<< x << "," << y << "," << e<<")";
     return s;
 }
+
+point& point:: operator + (point& p){
+    this->x = x + p.getX();
+    this->y = y + p.getY();
+    return (*this);
+}
+
+double p_scalaire(point& x1, point& x2){
+    return x1.getX()*x2.getX() + x1.getY()*x2.getY();
+}
+
+
+double delta(point& x1, point& x2){
+    //assert(((x1.getX() == x2.getX())||(x1.getY() == x2.getY()))); condition de voisinage
+    if (x1.getEtat() == x2.getEtat()){return(1);}
+    else return 0;
+}
