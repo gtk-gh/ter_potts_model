@@ -7,13 +7,14 @@
 #include "point.h"
 #include <time.h>
 #include <stdlib.h>
+#include <memory>
 
 class matrice {
 private:
     int size1;  // dimension des lignes de la matrice
     int size2;  // dimension des colonnes de la matrice
     vector<point>* matrix;     // chaque ligne de la matrice est un vecteur de points
-    vector<point> sommet;
+    vector<shared_ptr<point>> sommet;
 
 public:
     matrice() {this -> size1 = this -> size2 = 0;}; // on initialise la taille de la matrice à 0
@@ -21,13 +22,16 @@ public:
     matrice(int,int,vector<double>);
     ~matrice();         // destructeur
 
-    point& operator() (int , int) const; // Renvoie le point i,j
+    int getSize1();
+    int getSize2();
+
+    point& operator() (int , int); // Renvoie le point i,j
     matrice& operator = (const matrice&); // surcharge de = (affectation)
     matrice transpose();    // transpose une matrice
-    point& getSommet(int); // renvoie un sommet
+    point& getSommet(int) const; // renvoie un sommet
 
     friend ostream& operator <<(ostream&, matrice&);
-    friend void save_matr(const char*, const matrice &);
+    friend void save_matr(const char*, matrice &);
     friend ostream& operator <<(ostream&, matrice&); // Affichage matrice
 };
 

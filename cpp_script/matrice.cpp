@@ -8,17 +8,17 @@ matrice :: matrice(int n, int m){
     this ->size1 = n;
     this ->size2 = m;
     this -> matrix = new vector<point>[n];
-    vector<point> vec(n*m);
-    this -> sommet = vec;
+    //vector<point> vec(n*m);
+    //this -> sommet = vec;
     vector<point> v(m);
     //point p = point(0,0,0);
     for (int i = 0; i<n; i++){
         this -> matrix[i] = v;
         for (int j = 0; j<m; j++){
-            point temp;
-            temp = point(i,j,0);
+            point temp = point(i,j,0);
+            auto temp2 = make_shared<point>(i,j,0);
             this -> matrix[i][j] = temp;
-            this -> sommet[n*i + j] = temp;
+            sommet.push_back(temp2);
         }
     }
 }
@@ -28,18 +28,17 @@ matrice::matrice(int n,int m ,vector<double> etat){
     this ->size1 = n;
     this ->size2 = m;
     this -> matrix = new vector<point>[n];
-    vector<point> vec(n*m);
-    this -> sommet = vec;
     vector<point> v(m);
     for (int i = 0; i<n; i++){
         this -> matrix[i] = v;
         for (int j = 0; j<m; j++){
-            point temp;
             int randEtat;
             randEtat = rand() % etat.size();
-            temp = point(i,j,etat[randEtat]);
+            double tempEtat = etat[randEtat];
+            point temp = point(i,j,tempEtat);
+            auto temp2 = make_shared<point>(i,j,tempEtat);
             this -> matrix[i][j] = temp;
-            this -> sommet[n*i+j] = temp;
+            sommet.push_back(temp2);
         }
     }
 }
@@ -47,13 +46,23 @@ matrice::matrice(int n,int m ,vector<double> etat){
 // Destructeur
 matrice::~matrice()
 {
-    if (this->size1||this->size2) delete[] this->matrix;
+    if (this->size1||this->size2){
+        delete[] this->matrix;
+    }
+}
+
+int matrice::getSize1(){
+    return this->size1;
+}
+
+int matrice::getSize2(){
+    return this->size2;
 }
 
 // Retourne le coefficient (i,j)
-point& matrice::operator() (int i, int j) const
+point& matrice::operator() (int i, int j)
 {
-    return this -> matrix[i][j];
+    return *(this) -> sommet[i*this->size1 + j];
 }
 
 // Surcharge << affichage matrice
@@ -90,22 +99,23 @@ matrice matrice::transpose()
     return T;
 }
 
-void save_matr(const char* Nomfich, const matrice & mat){
+void save_matr(const char* Nomfich, matrice & mat){
     ofstream fichier;
     fichier.open(Nomfich); // ouverture du fichier
 
-    assert(mat.size1>0 && mat.size2>0);
-    fichier << mat.size1 << "\n" << mat.size2 << "\n";
-    for (int i=0; i<mat.size1 ; i++){
-        for (int j = 0 ; j < mat.size2-1 ; j++){
+    assert(mat.getSize1()>0 && mat.getSize2()>0);
+    fichier << mat.getSize1() << "\n" << mat.getSize2() << "\n";
+    for (int i=0; i<mat.getSize1() ; i++){
+        for (int j = 0 ; j < mat.getSize2()-1 ; j++){
             fichier << mat(i,j).getEtat() << " ";
         }
-        fichier << mat(i,mat.size2-1).getEtat() << "\n";
+        fichier << mat(i,mat.getSize2()-1).getEtat() << "\n";
     }
     fichier.close();           // fermature du fichier
 }
 
 
-point& matrice::getSommet(int i){
-    return (this->sommet[i]);
+point& matrice::getSommet(int i) const
+{
+    return *(this)->sommet[i];
 }
