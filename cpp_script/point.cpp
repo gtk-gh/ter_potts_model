@@ -82,13 +82,17 @@ double p_scalaire(point& x1, point& x2){
 }
 
 
-double delta(point& x1, point& x2){
+int delta(point& x1, point& x2){
     //assert(((x1.getX() == x2.getX())||(x1.getY() == x2.getY()))); condition de voisinage
-    if (x1.getEtat() == x2.getEtat()){return(1);}
-    else return 0;
+    int res;
+    if (x1.getEtat() == x2.getEtat()){res = 1;}
+    else res = 0;
+    return res;
 }
 
-double z(point& p, double etat){
-    if(p.getEtat() == etat){return 1;}
-    else return 0;
+int z(point& p, double etat){
+    int res;
+    if(p.getEtat() == etat){res = 1;}
+    else res = 0;
+    return res;
 }

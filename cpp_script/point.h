@@ -44,8 +44,8 @@ public:
 
     friend ostream& operator << (ostream&, point &);
     friend double p_scalaire(point&, point&);   // produit scalaire
-    friend double delta(point&, point&);    //delta = 1 si deux sommets sont dans le mm état, 0 sinon
-    friend double z(point&,double); // z = 1 si le sommet i est dans l'état k
+    friend int delta(point&, point&);    //delta = 1 si deux sommets sont dans le mm état, 0 sinon
+    friend int z(point&,double); // z = 1 si le sommet i est dans l'état k
 };
 
 #endif //CPP_SCRIPT_POINT_H
