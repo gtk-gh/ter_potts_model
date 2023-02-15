@@ -8,6 +8,8 @@ matrice :: matrice(int n, int m){
     this ->size1 = n;
     this ->size2 = m;
     this -> matrix = new vector<point>[n];
+    vector<point> vec(n*m);
+    this -> sommet = vec;
     vector<point> v(m);
     //point p = point(0,0,0);
     for (int i = 0; i<n; i++){
@@ -16,6 +18,7 @@ matrice :: matrice(int n, int m){
             point temp;
             temp = point(i,j,0);
             this -> matrix[i][j] = temp;
+            this -> sommet[n*i + j] = temp;
         }
     }
 }
@@ -25,6 +28,8 @@ matrice::matrice(int n,int m ,vector<double> etat){
     this ->size1 = n;
     this ->size2 = m;
     this -> matrix = new vector<point>[n];
+    vector<point> vec(n*m);
+    this -> sommet = vec;
     vector<point> v(m);
     for (int i = 0; i<n; i++){
         this -> matrix[i] = v;
@@ -34,6 +39,7 @@ matrice::matrice(int n,int m ,vector<double> etat){
             randEtat = rand() % etat.size();
             temp = point(i,j,etat[randEtat]);
             this -> matrix[i][j] = temp;
+            this -> sommet[n*i+j] = temp;
         }
     }
 }
@@ -99,8 +105,7 @@ void save_matr(const char* Nomfich, const matrice & mat){
     fichier.close();           // fermature du fichier
 }
 
-int sommet(matrice& M, point& x){
-    int n = M.size1;
-    int m = M.size2;
-    return x.getX()*n+x.getY()+1;
+
+point& matrice::getSommet(int i){
+    return (this->sommet[i]);
 }
