@@ -71,6 +71,16 @@ ostream& operator << (ostream& s,  point & P){
     return s;
 }
 
+ostream& operator << (ostream& s,  shared_ptr<point> P){
+    int x,y;
+    double e;
+    x = P->getX();
+    y = P->getY();
+    e = P->getEtat();
+    s <<"("<< x << "," << y << "," << e<<")";
+    return s;
+}
+
 point& point:: operator + (point& p){
     this->x = x + p.getX();
     this->y = y + p.getY();

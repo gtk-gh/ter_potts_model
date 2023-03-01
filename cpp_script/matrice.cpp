@@ -120,6 +120,6 @@ point& matrice::getSommet(int i) const
     return *(this)->sommet[i];
 }
 
-shared_ptr<point> matrice::getSommet2(int i){
+shared_ptr<point> matrice::getSommet(int i){
     return (this)->sommet[i];
 }

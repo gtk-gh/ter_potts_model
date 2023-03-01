@@ -7,14 +7,13 @@ int main() {
     matrice M = matrice(5,5,etat);
     cout << M;
     shared_ptr<point> temp;
-    temp = M.getSommet2(0);
-    cout << *temp << endl;
-    //save_matr("../../py_script/mat.txt",M);
-    //M(0,0).changeX(9999);
-    //temp.changeEtat(2222);
+    temp = M.getSommet(0);
+    cout << temp << endl;
     changeEtat(temp,222222.0);
-    cout << M;
-    cout << endl << *temp;
+    double test;
+    test = temp->getEtat();
+    cout << test;
+    cout << endl << temp;
 
     return 0;
 }
