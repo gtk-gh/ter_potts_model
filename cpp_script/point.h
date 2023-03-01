@@ -23,6 +23,7 @@ private :
     voisinage voisin;
 
 public:
+
     point() {this->x = 0; this->y = 0;this->etat = 0;};
     point(int,int);
     point(int,int,double);
@@ -46,6 +47,8 @@ public:
     friend double p_scalaire(point&, point&);   // produit scalaire
     friend int delta(point&, point&);    //delta = 1 si deux sommets sont dans le mm état, 0 sinon
     friend int z(point&,double); // z = 1 si le sommet i est dans l'état k
+
+    friend void changeEtat(shared_ptr<point> , double);
 };
 
 #endif //CPP_SCRIPT_POINT_H

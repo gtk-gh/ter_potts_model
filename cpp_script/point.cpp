@@ -96,3 +96,7 @@ int z(point& p, double etat){
     else res = 0;
     return res;
 }
+
+void changeEtat(shared_ptr<point> A, double e){
+    A->changeEtat(e);
+}

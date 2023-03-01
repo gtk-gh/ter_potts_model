@@ -33,6 +33,8 @@ public:
     friend ostream& operator <<(ostream&, matrice&);
     friend void save_matr(const char*, matrice &);
     friend ostream& operator <<(ostream&, matrice&); // Affichage matrice
+
+    shared_ptr<point> getSommet2(int i);
 };
 
 
