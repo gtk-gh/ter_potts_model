@@ -42,6 +42,7 @@ public:
 
     point& operator = (const point&);
     point& operator + (point&); // renvoi la somme de deux points
+    void operator= (const shared_ptr<point>);
 
     friend ostream& operator << (ostream&, point &);
     friend ostream& operator << (ostream&, shared_ptr<point>);

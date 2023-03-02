@@ -123,3 +123,7 @@ point& matrice::getSommet(int i) const
 shared_ptr<point> matrice::getSommet(int i){
     return (this)->sommet[i];
 }
+
+vector<shared_ptr<point>> matrice::getAllSommet(){
+    return this->sommet;
+}

@@ -61,6 +61,13 @@ point& point::operator = (const point& A)
     return (*this);
 }
 
+void point::operator = (const shared_ptr<point> A){
+    this->x = A->x;
+    this->y = A->y;
+    this->etat = A->etat;
+    this->voisin = A->voisin;
+}
+
 ostream& operator << (ostream& s,  point & P){
     int x,y;
     double e;
@@ -86,6 +93,7 @@ point& point:: operator + (point& p){
     this->y = y + p.getY();
     return (*this);
 }
+
 
 double p_scalaire(point& x1, point& x2){
     return x1.getX()*x2.getX() + x1.getY()*x2.getY();

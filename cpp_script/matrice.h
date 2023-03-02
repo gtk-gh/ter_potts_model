@@ -26,6 +26,7 @@ public:
     int getSize2();
 
     point& operator() (int , int); // Renvoie le point i,j
+
     matrice& operator = (const matrice&); // surcharge de = (affectation)
     matrice transpose();    // transpose une matrice
     point& getSommet(int) const; // renvoie un sommet
@@ -34,6 +35,7 @@ public:
     friend void save_matr(const char*, matrice &);
     friend ostream& operator <<(ostream&, matrice&); // Affichage matrice
 
+    vector<shared_ptr<point>> getAllSommet();
     shared_ptr<point> getSommet(int i);
 };
 
