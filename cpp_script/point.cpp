@@ -19,6 +19,16 @@ point::point(int x, int y,double etat){
     this->etat = etat;
 }
 
+point::point(point const & A){
+    this->x = A.x;
+    this->y = A.y;
+    this->etat = A.etat;
+}
+
+point::~point(){
+    //cout << "Le point : " << this << " " << this->x << "," << this->y << " a été supprimé." << endl;
+}
+
 int point::getX() {
     return this->x;
 }
@@ -43,29 +53,22 @@ void point::changeY(int y2){
     this->y = y2;
 }
 
-void point::addVoisin(point & p, string dir) {
-    if (dir == "g") this->voisin.gauche = & p;
-}
-
-point point::getVoisin(string dir){
-    //if (dir == "g")
-        return *(this->voisin.gauche);
-}
 
 point& point::operator = (const point& A)
 {
     this->x = A.x;
     this->y = A.y;
     this->etat = A.etat;
-    this->voisin = A.voisin;
     return (*this);
 }
 
-void point::operator = (const shared_ptr<point> A){
+shared_ptr<point> point::operator = (const shared_ptr<point> A){
     this->x = A->x;
     this->y = A->y;
     this->etat = A->etat;
-    this->voisin = A->voisin;
+    point *ptr = new point(*A);
+    shared_ptr<point> sptr(ptr);
+    return (sptr);
 }
 
 ostream& operator << (ostream& s,  point & P){

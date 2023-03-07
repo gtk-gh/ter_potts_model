@@ -7,6 +7,6 @@
 
 #include "matrice.h"
 
-double p_T_z(double T, matrice M);
+double p_T_z(double T, matrice & M);
 
 #endif //CPP_SCRIPT_METROPOLIS_HASTINGS_H

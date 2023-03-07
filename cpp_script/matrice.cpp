@@ -7,33 +7,33 @@
 matrice :: matrice(int n, int m){
     this ->size1 = n;
     this ->size2 = m;
-    this -> matrix = new vector<point>[n];
-    //vector<point> vec(n*m);
-    //this -> sommet = vec;
-    vector<point> v(m);
-    //point p = point(0,0,0);
+    this -> fullsize = n*m;
+    this -> matrix = new vector<point>[n]; // vecteur de pointeur de vecteur
+    vector<point> v(m); // vecteur de point (il représente une ligne)
     for (int i = 0; i<n; i++){
         this -> matrix[i] = v;
         for (int j = 0; j<m; j++){
-            point temp = point(i,j,0);
-            auto temp2 = make_shared<point>(i,j,0);
-            this -> matrix[i][j] = temp;
-            sommet.push_back(temp2);
+            point temp = point(i,j,0); // crée un point à la pos i,j à l'état 0
+            auto temp2 = make_shared<point>(i,j,0); // crée un pointeur intelligent pour le point i j
+            this -> matrix[i][j] = temp; // on remplace chaque point dans matrix par le point temp
+            sommet.push_back(temp2); // on push le pointeur intelligent dans le vecteur sommet
         }
     }
 }
 
 matrice::matrice(int n,int m ,vector<double> etat){
-    srand (time(NULL));
+    // on fait la meme chose que le premier constructeur sauf que l'état n'est plus 0 mais une valeur random
+    // du vecteur etat
+    srand (time(NULL)); // initialisation du random en fonction du timer de l'ordinateur
     this ->size1 = n;
     this ->size2 = m;
+    this->fullsize = n*m;
     this -> matrix = new vector<point>[n];
     vector<point> v(m);
     for (int i = 0; i<n; i++){
         this -> matrix[i] = v;
         for (int j = 0; j<m; j++){
-            int randEtat;
-            randEtat = rand() % etat.size();
+            int randEtat = rand() % etat.size();// on génère une valeur comprise entre 0 et length d'état
             double tempEtat = etat[randEtat];
             point temp = point(i,j,tempEtat);
             auto temp2 = make_shared<point>(i,j,tempEtat);
@@ -49,6 +49,8 @@ matrice::~matrice()
     if (this->size1||this->size2){
         delete[] this->matrix;
     }
+    sommet.clear();
+    //cout << "La matrice : " << this << " a été supprimé." << endl;
 }
 
 int matrice::getSize1(){
@@ -57,6 +59,10 @@ int matrice::getSize1(){
 
 int matrice::getSize2(){
     return this->size2;
+}
+
+int matrice::getFullSize(){
+    return this->fullsize;
 }
 
 // Retourne le coefficient (i,j)
@@ -89,7 +95,7 @@ matrice& matrice::operator = (const matrice& mat){
     return (*this);
 }
 
-// Transposee
+// Transpose la matrice
 matrice matrice::transpose()
 {
     matrice T(this->size2,this->size1);
@@ -111,7 +117,7 @@ void save_matr(const char* Nomfich, matrice & mat){
         }
         fichier << mat(i,mat.getSize2()-1).getEtat() << "\n";
     }
-    fichier.close();           // fermature du fichier
+    fichier.close();           // fermeture du fichier
 }
 
 
