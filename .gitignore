@@ -53,7 +53,7 @@ cmake-build-*/
 *.iws
 
 # IntelliJ
-tex/out/
+tex_script/out/
 
 # mpeltonen/sbt-idea plugin
 .idea_modules/
