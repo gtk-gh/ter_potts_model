@@ -36,7 +36,7 @@ public:
     friend ostream& operator << (ostream&, point &); // surcharge << pour affichage
     friend ostream& operator << (ostream&, shared_ptr<point>); // surcharge << pour affichage avec pointeur intelligent
 
-    friend double p_scalaire(point&, point&);   // produit scalaire
+    friend double p_scalaire(shared_ptr<point>, shared_ptr<point>);   // produit scalaire
     friend int delta(point&, point&);    //delta = 1 si deux sommets sont dans le mm état, 0 sinon
     friend int z(point&,double); // z = 1 si le sommet i est dans l'état k
     friend void changeEtat(shared_ptr<point> , double); // change l'état d'un pointeur intel (utile quand les points sont dans une matrice)

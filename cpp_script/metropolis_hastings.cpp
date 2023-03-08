@@ -10,8 +10,7 @@ using namespace std;
 
 double p_T_z(double T, matrice & M){
     // Initialisation de variable
-    double delta , res;
-    int s = 1;
+    double delta , res, s;
     res = 0;
     // on récupère toutes les valeurs de la matrice + sa taille
     vector<shared_ptr<point>> AllSommet = M.getAllSommet();
@@ -23,17 +22,17 @@ double p_T_z(double T, matrice & M){
         point_i = M.getSommet(i);
         for (int j = 0;j<n;j++){
             delta = 0;
+            s = 0;
             point_j = M.getSommet(j);
 
             // on calcule delta
             if(abs(point_i->getEtat() - point_j->getEtat() ) < pow(10,-9)) delta = 1;
 
             // on calcule s
-
-
+            s = p_scalaire(point_i, point_j);
             // on rajoute au res
             res = res + (1-delta)*s;
         }
     }
-    return (1/T)*res;
+    return exp(-(1/T)*res); // Renvoi 0 car trop grande valeur dans l'exponentielle
 }

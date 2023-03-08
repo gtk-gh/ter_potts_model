@@ -98,8 +98,8 @@ point& point:: operator + (point& p){
 }
 
 
-double p_scalaire(point& x1, point& x2){
-    return x1.getX()*x2.getX() + x1.getY()*x2.getY();
+double p_scalaire(shared_ptr<point> x1, shared_ptr<point> x2){
+    return x1->getX()*x2->getX() + x1->getY()*x2->getY();
 }
 
 

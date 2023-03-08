@@ -7,7 +7,7 @@ int main() {
     matrice M = matrice(5,5,etat);
     cout << M;
     double p ;
-    p = p_T_z(1,M);
+    p = p_T_z(200,M);
     cout << endl << p << endl;
     return 0;
 }
