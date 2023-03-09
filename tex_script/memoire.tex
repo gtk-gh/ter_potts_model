@@ -20,8 +20,7 @@
 \newcommand{\guill}[1]{``{#1}''}     %guillements dans les guillemets
 \bibliography{bibliographie/bibliographiebdd}
 
-\pagenumbering{arabic}
-\setcounter{page}{1}
+
 
 
 \begin{document}
@@ -32,18 +31,20 @@
 %\input{titres/garde.tex}
 
 
-\input{titres/remerciements.tex}
 
 \begin{singlespace}
 \tableofcontents % table des mati?res
-\listoffigures % si vous avez des images... si vous n'en avez pas, effacez cette ligne
 \end{singlespace}
 
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+\input{titres/remerciements.tex}
 
 
 %dans les fichier vous trouverez des exemples d'usage des diff?rentes commandes de LaTeX
 
-%\input{textes/intro.tex} %intro
+\input{textes/intro.tex} %intro
 
 %\input{textes/prog.tex} %explication de la partie prog
 
