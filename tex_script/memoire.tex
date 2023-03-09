@@ -1,0 +1,61 @@
+\documentclass[12pt,a4paper]{report}
+\usepackage[utf8]{inputenc}    %mettre utf8 ? la place de latin si vous utilisez utf8
+\usepackage[T1]{fontenc}
+\usepackage{setspace}
+\renewcommand{\baselinestretch}{2}
+\usepackage[francais]{babel}
+\usepackage[maxlevel=3]{csquotes}
+\usepackage[backend=bibtex,style=verbose-trad1,isbn=false]{biblatex}
+\DefineBibliographyStrings{french}{in={dans},inseries={dans}}
+\usepackage[cyr]{aeguill}
+\usepackage{geometry}
+\geometry{verbose,letterpaper,tmargin=27.5mm,bmargin=27.5mm,lmargin=27.5mm,rmargin=27.5mm}
+\usepackage{graphicx}
+\usepackage{epigraph}
+\setlength\epigraphwidth{13cm}
+\usepackage[center,up,labelfont=bf]{caption}
+\usepackage{float}
+\usepackage{url}
+\newcommand{\guil}[1]{?~{#1}~?}    %guillemets 
+\newcommand{\guill}[1]{``{#1}''}     %guillements dans les guillemets
+\bibliography{bibliographie/bibliographiebdd}
+
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+
+\begin{document}
+
+
+
+\input{titres/titre.tex}
+%\input{titres/garde.tex}
+
+
+\input{titres/remerciements.tex}
+
+\begin{singlespace}
+\tableofcontents % table des mati?res
+\listoffigures % si vous avez des images... si vous n'en avez pas, effacez cette ligne
+\end{singlespace}
+
+
+
+%dans les fichier vous trouverez des exemples d'usage des diff?rentes commandes de LaTeX
+
+%\input{textes/intro.tex} %intro
+
+%\input{textes/prog.tex} %explication de la partie prog
+
+%\input{textes/algo.tex} %explication algorithme metropolis hasting
+
+
+%\printbibheading %exemple de bibliographie divis?e en sections. Pour ajouter des oeuvres non cit?es,utiliser \nocite
+
+%\printbibliography[keyword=pratique,heading=subbibliography,title={Th?ories litt?raires dans les jeux vid?o}]
+%\printbibliography[keyword=litteraire,heading=subbibliography,title={Narratologie et structuralisme}]
+
+%\printbibliography[keyword=jeu,heading=subbibliography,title={\emph{Games studies}}]
+
+
+\end{document} 

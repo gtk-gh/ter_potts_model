@@ -1,0 +1,757 @@
+@BOOK{Aarseth1997,
+  AUTHOR =       {Aarseth, Espen J.},
+  TITLE =        {Cybertext. Perspectives on Ergodic Literature},
+  address =      {Baltimore},
+  PUBLISHER =    {Johns Hopkins University Press},
+  YEAR =         {1997},
+  keywords = {pratique}
+}
+
+@Incollection{aarseth2004a,
+  AUTHOR =       {Aarseth, Espen J.},
+  editor =       {Marie-Laure Ryan},
+  booktitle =    {Narrative across media. The Languages of Storytelling},
+  title =      {{B}eyond the frontier~: {Q}uest {Ga}mes as {P}ost-{N}arrative {D}iscourse},
+  PUBLISHER =    {University of Nebraska Press},
+  YEAR =         {2004},
+  address =      {Lincoln},
+  keywords = {pratique}
+}
+
+@Incollection{aarseth2004b,
+  AUTHOR =       {Aarseth, Espen J.},
+  editor =       {Pat Harrigan and Noah Wardrip-Fruin},
+  bookTITLE =    {{F}irst {P}erson~: new media as story, performance, and game },
+  title =      {{G}enre trouble~: {N}arrativism and the {A}rt of {S}imulation},
+  PUBLISHER =    {MIT press},
+  YEAR =         {2004},
+  address =      {Cambridge},
+  keywords = {pratique}
+}
+
+@book{archibald2012,
+	address = {Neuilly-les-Dijon},
+	title = {Real niggaz don't die~!: Grand theft auto, San Andreas~: entre récit et jeu},
+	publisher = {le Murmure},
+	author = {Archibald, Samuel},
+	year = {2012},
+    keywords = {pratique}
+}
+
+
+@BOOK{dict,
+  AUTHOR =       {Aron, Paul and Denis Saint-Jacques and Alain Viala},
+  TITLE =        {Le dictionnaire du littéraire},
+  PUBLISHER =    {Presses Universitaires de France},
+  YEAR =         {2002},
+  address =      {Paris},
+    keywords = {litteraire}
+}
+
+@BOOK{arsenault2008,
+  AUTHOR =       {Arsenault, Dominic},
+  TITLE =        {Narration in the Videogame},
+  PUBLISHER =    {VDM Verlag},
+  YEAR =         {2008},
+  address =      {Allemagne},
+  keywords = {pratique}
+}
+
+@BOOK{barthes1976,
+  AUTHOR =       {Barthes, Roland},
+  TITLE =        {S/Z},
+  PUBLISHER =    {Seuil},
+  address =      {Paris},
+  YEAR =         {1976},
+  keywords = {litteraire}
+}
+
+@ARTICLE{barthes1981,
+  AUTHOR =       {Barthes, Roland},
+  TITLE =        {{I}ntroduction à l'analyse structurale des récits},
+  JOURNAL =      {Communications 8: l'analyse structurale du récit},
+  address =      {Paris},
+  PUBLISHER =    {Seuil},
+  YEAR =         {1981},
+  keywords = {litteraire}
+}
+
+@BOOK{bates,
+  AUTHOR =       {Bates, Bob},
+  TITLE =        {Game Design~: the Art and Business of Creating Games},
+  PUBLISHER =    {Course technology PTR},
+  YEAR =         {2004},
+  address =      {Boston},
+keywords = {pratique}
+}
+
+@ARTICLE{bouchardon2008,
+  AUTHOR =       {Bouchardon, Serge},
+  TITLE =        {{L}e récit littéraire interactif~: une valeur heuristique},
+  JOURNAL =      {Electronic Literature Organization},
+  YEAR =         {2008},
+  volume =       {155},
+  pages =        {81-87},
+  keywords = {pratique}
+}
+
+
+@BOOK{bremond1973,
+  AUTHOR =       {Bremond, Claude},
+  TITLE =        {Logique du récit},
+  PUBLISHER =    {Seuil},
+  YEAR =         {1973},
+  address =      {Paris},
+  keywords = {litteraire}
+}
+@INBOOK{bremond1981,
+	address = {Paris},
+	title = {{L}a logiques des possibles narratifs},
+	url = {http://www.persee.fr/web/revues/home/prescript/article/comm_0588-8018_1966_num_8_1_1115},
+	booktitle = {L'analyse structurale du récit},
+	publisher = {Seuil},
+	author = {Bremond, Claude},
+	year = {1981},
+	pages = {60-76},
+keywords = {litteraire}
+}
+
+@book{bruno,
+	author = {Bruno, Pierre},
+	title = {Les jeux vidéo},
+	address = {Paris},
+	publisher = {Syros},
+	year = {2009},
+keywords = {pratique}
+}
+
+@book{caillois1,
+	address = {Paris},
+	title = {Les jeux et les hommes},
+	publisher = {Gallimard},
+	author = {Caillois, Roger},
+	year = {1991},
+keywords = {jeu}
+}
+
+@article{greg,
+  AUTHOR =       {Costikyan, Greg},
+  TITLE =        {{W}here {S}tories End and {G}ames {B}egin},
+  JOURNAL =      {Game developer magazine},
+  YEAR =         {2001},
+  url =          {http://www.costik.com/gamnstry.html},
+  month =        {septembre},
+  keywords = {jeu}
+}
+
+
+@phdthesis{cote2,
+	address = {Chicoutimi},
+	type = {Mémoire de maîtrise},
+	title = {Fiction, récit et lecture vidéoludiques~: une approche littéraire au jeu électronique},
+	url = {http://constellation.uqac.ca/2505/1/030332140.pdf},
+	school = {Université du Québec à Chicoutimi},
+	author = {Côté, Nicolas},
+	year = {2012},
+keywords = {pratique}
+}
+
+
+@incollection{chris2003a,
+  AUTHOR =       {Crawford, Chris},
+  TITLE =        {{I}nteractive {S}torytelling},
+  booktitle =    {The video game theory reader},
+  YEAR =         {2003},
+  editor =      {Mark J.~P. Wolf and Bernard Perron},
+  	address = {New York},
+	publisher = {Routeledge},
+keywords = {pratique}
+}
+@incollection{chris2003b,
+  AUTHOR =       {Crawford, Chris},
+  TITLE =        {{A}ssumptions {U}derlying the {E}rasmatron {S}torytelling {S}ystem},
+  booktitle =    {{N}arrative intelligence},
+  YEAR =         {2003},
+  editor =       {Michael Mateas and Phoebe Sengers},
+  address = {Philadelphie},
+  publisher = {John Benjamins Publishing},
+  keywords = {pratique}
+}
+@BOOK{did,
+  AUTHOR =       {Diderot, Denis},
+  TITLE =        {Jacques le Fataliste},
+  PUBLISHER =    {Édition du Bélier},
+  YEAR =         {1967 [1778]},
+  address =      {Montréal}
+}
+@INCOLLECTION{don,
+  AUTHOR =       {Don Abbe},
+  TITLE =        {{N}arrative and the interface},
+  BOOKTITLE =    {The art of human-computer interface design},
+  PUBLISHER =    {Addison-Wesley Profesional},
+  YEAR =         {1990},
+  editor =       {Brenda Laurel},
+  address =      {USA},
+  keywords = {pratique}
+}
+
+@article{mark,
+  AUTHOR =       {Eskelinen, Markku},
+  TITLE =        {{T}he {G}aming {S}ituation},
+  JOURNAL =      {{G}ame {S}tudies},
+  YEAR =         {2001},
+  volume =       {1},
+  number =       {1},
+  url =        {http://www.gamestudies.org/0101/eskelinen/},
+  month =        {juillet},
+  keywords = {jeu}
+}
+
+@book{eco1979,
+	address = {Paris},
+	title = {L'oeuvre ouverte},
+	publisher = {Editions du Seuil},
+	author = {Eco, Umberto},
+	year = {1979},
+    keywords = {reception}
+}
+
+@book{eco1985,
+	address = {Paris},
+	title = {Lector in fabula. Le rôle du lecteur},
+	publisher = {Grasset et Fasquelle},
+	author = {Eco, Umberto},
+	year = {1985},
+    keywords = {reception}
+
+}
+
+@BOOK{gaudreault,
+  AUTHOR =       {Gaudreault, André},
+  TITLE =        {Du littéraire au filmique~: système du récit},
+  PUBLISHER =    {Éditions Nota Bene},
+  YEAR =         {1999},
+  address =      {Paris},
+  keywords = {litteraire}
+}
+
+@BOOK{gen1972,
+  AUTHOR =       {Genette, Gérard},
+  TITLE =        {Figure III},
+  PUBLISHER =    {Seuil},
+  YEAR =         {1972},
+  address =      {Paris},
+keywords = {litteraire}
+}
+
+@BOOK{gen1983b,
+  AUTHOR =       {Genette, Gérard},
+  TITLE =        {Nouveau discours du récit},
+  PUBLISHER =    {Seuil},
+  YEAR =         {1983},
+  address =      {Paris},
+  keywords = {litteraire}
+}
+
+@ARTICLE{gen2003,
+  AUTHOR =       {Genette, Gérard},
+  TITLE =        {Fiction ou Diction},
+  JOURNAL =      {Poétique},
+  YEAR =         {2003},
+  keywords = {litteraire}
+}
+
+@ARTICLE{gen2005,
+  AUTHOR =       {Genvo, Sébastien},
+  TITLE =        {Transmédialité de la narration vidéoludique~: quels outils d'analyse~?},
+  JOURNAL =      {compar(a)ison},
+  year =         {2005},
+  url =          {http://www.ludologique.com/publis/types_de_narration.html},
+  keywords = {pratique}
+}
+
+@book{genvo2009,
+	author = {Genvo, Sébastien},
+	title = {Le jeu à son ère numérique~: comprendre et analyser les jeux vidéo},
+	address = {Paris},
+	publisher = {Harmattan},
+	year = {2009},
+  keywords = {pratique}
+}
+
+@CONFERENCE{genvo2013,
+  author =       {Genvo, Sébastien},
+  title =        {Narrative Design},
+  booktitle =    {Stunfest, le festival des cultures vidéoludiques},
+  year =         {2013},
+  address =      {Rennes},
+  month =        {avril},
+    keywords = {pratique}
+}
+
+@book{Greimas,
+	address = {Paris},
+	title = {Du sens. Essais sémiotiques},
+	publisher = {Seuil},
+	author = {Greimas, A.~J.},
+	year = {1970},
+  keywords = {litteraire}
+}
+
+@book{guardiola2000,
+	address = {Paris},
+	title = {Écrire pour le jeu},
+	publisher = {Dixit},
+	author = {Guardiola, Emmanuel},
+	year = {2000},
+  keywords = {pratique}
+}
+
+@ARTICLE{hamon1979,
+  AUTHOR =       {Hamon, Philippe},
+  TITLE =        {{P}our un statut sémiologique du personnage},
+  JOURNAL =      {Poétique},
+  url =          {http://www.ludologique.com/publis/types_de_narration.html},
+  year =         {1979},
+  keywords = {litteraire}
+}
+
+@book{hamon1998,
+	address = {Suisse},
+	title = {Le personnel du roman},
+	publisher = {Librairie Droz},
+	author = {Hamon, Philippe},
+	year = {1998},
+  keywords = {litteraire}
+}
+
+@article{hayles2007,
+	author = {Hayles, Katherine},
+	title = {Electronic Literature~: what is it~?},
+	url = {http://eliterature.org/pad/elp.html},
+	journal = {Electronic Literature Organization},
+	year = {2007},
+  keywords = {pratique}
+}
+
+@BOOK{anne,
+  AUTHOR =       {Hénault, Anne},
+  TITLE =        {Les enjeux de la sémiotique},
+  PUBLISHER =    {Presses Universitaires de France},
+  YEAR =         {1979},
+  address =      {Paris},
+    keywords = {reception}
+}
+
+@book{hui,
+	author = {Huizinga, Johan},
+	title = {Homo Ludens. Essai sur la fonction sociale du jeu},
+	address = {Paris},
+	publisher = {Gallimard},
+	year = {1951 [1938]},
+  keywords = {jeu}
+}
+
+@book{iser1974,
+	author = {Iser, Wolfgang},
+	title = {L'acte de lecture. Théorie de l'effet esthétique},
+	address = {Bruxelles},
+	publisher = {Éditions Mardaga},
+	year = {1985 [1974]},
+  keywords = {reception}
+}
+
+@incollection{jenkins2004,
+	address = {Cambridge},
+	publisher = {MIT Press},
+     editor =      {Pat Harrigan and Noah Wardrip-Fruin},
+	title = {Game Design as Narrative Architecture},
+	url = {http://interactive.usc.edu/blog-old/wp-content/uploads/2011/01/Jenkins_Narrative_Architecture.pdf},
+	booktitle = {First Person~: new media as story, performance, and game},
+	author = {Jenkins, Henry},
+	year = {2004},
+  keywords = {pratique}
+}
+
+@INCOLLECTION{juul2002,
+  AUTHOR =       {Juul, Jesper},
+  TITLE =        {The Open and the Closed~: Game of emergence and games of progression},
+  BOOKTITLE =    {Computer Games and Digital Cultures Conference Proceeding},
+  PUBLISHER =    {Tampere University Press},
+  YEAR =         {2002},
+  editor =       {Frans Mäyrä},
+  pages =        {323-329},
+  address =      {Tampere},
+    keywords = {jeu}
+}
+
+@book{juul2005,
+	author = {Juul, Jesper},
+	title = {Half-real~: video games between real rules and fictional worlds},
+	address = {Cambridge},
+	publisher = {MIT Press},
+	year = {2005},
+  keywords = {jeu}
+}
+
+@BOOK{laure,
+  AUTHOR =       {Laurel, Brenda},
+  TITLE =        {Computer as theatre},
+  PUBLISHER =    {Addison-Wesley},
+  YEAR =         {1993 [1991]},
+  address =      {Boston},
+    keywords = {pratique}
+}
+
+@BOOK{mano,
+  AUTHOR =       {Manovich, Lev},
+  TITLE =        {The Language of New Media},
+  PUBLISHER =    {MIT Press},
+  YEAR =         {2001},
+  address =      {Cambridge},
+    keywords = {pratique}
+}
+
+@book{murray1998,
+	address = {Cambridge},
+	title = {Hamlet on the holodeck~: the future of narrative in cyberspace},
+	publisher = {MIT Press},
+	author = {Murray, Janet},
+	year = {1998},
+    keywords = {pratique}
+}
+
+@book{picard1986,
+	address = {Paris},
+	title = {La lecture comme jeu~: essai sur la littérature},
+	publisher = {Editions de Minuit},
+	author = {Picard, Michel},
+	year = {1986},
+  keywords = {reception}
+}
+
+@BOOK{ric83,
+  AUTHOR =       {Ricoeur, Paul},
+  TITLE =        {Temps et Récit, Tome I},
+  PUBLISHER =    {Seuil},
+  YEAR =         {1983},
+  address =      {Paris},
+    keywords = {litteraire}
+}
+
+@BOOK{ric86,
+  AUTHOR =       {Ricoeur, Paul},
+  TITLE =        {Du texte à l'action},
+  PUBLISHER =    {Seuil},
+  YEAR =         {1986},
+  address =      {Paris},
+    keywords = {litteraire}
+}
+@BOOK{riff,
+  AUTHOR =       {Riffaterre, Michel},
+  TITLE =        {Sémiotique de la poésie},
+  PUBLISHER =    {Seuil},
+  YEAR =         {1983},
+  address =      {Paris}
+}
+@BOOK{rou,
+  AUTHOR =       {Roudaut, Jean},
+  TITLE =        {Les Villes imaginaires dans la littérature française},
+  PUBLISHER =    {Hatier},
+  YEAR =         {1990},
+  address =      {Paris},
+    keywords = {litteraire}
+}
+@article{ryan2001a,
+	author = {Ryan, Marie-Laure},
+	title = {Beyond Myth and Metaphor~: The Case of Narrative in Digital Media},
+	journal = {Games Studies},
+	url = {http://www.gamestudies.org/0101/ryan},
+	year = {2001},
+  keywords = {pratique}
+}
+
+@BOOK{ryan2001b,
+  AUTHOR =       {Ryan, Marie-Laure},
+  TITLE =        {Narrative as Virtual Reality~: Immersion and Interactivity in Literature and Electronic Media},
+  PUBLISHER =    {Johns Hopkins University Press},
+  YEAR =         {2001},
+  address =      {Baltimore},
+    keywords = {pratique}
+}
+
+@book{ryan2006,
+	author = {Ryan, Marie-Laure},
+	title = {Avatars of story},
+	address = {Minneapolis},
+	publisher = {University of Minnesota Press},
+	year = {2006},
+  keywords = {pratique}
+}
+
+@INCOLLECTION{ryan2012,
+  AUTHOR =       {Ryan, Marie-Laure},
+  TITLE =        {{Narration in Various Media}},
+  BOOKTITLE =    {The living Handbook of narratology},
+  PUBLISHER =    {Hamburg University},
+  YEAR =         {2012},
+  editor =       {Peter Huhn},
+  address =      {Hamburg},
+    keywords = {pratique}
+}
+
+@BOOK{schaeffer95,
+  AUTHOR =       {Schaeffer, Jean-Marie},
+  TITLE =        {Nouveau Dictionnaire Encyclopédique des Sciences du langage},
+  PUBLISHER =    {Seuil},
+  YEAR =         {1995},
+  address =      {Paris}
+}
+
+@BOOK{schaeffer99,
+  AUTHOR =       {Schaeffer, Jean-Marie},
+  TITLE =        {Pourquoi la fiction~?},
+  PUBLISHER =    {Seuil},
+  YEAR =         {1999},
+  address =      {Paris},
+    keywords = {litteraire}
+}
+
+@ARTICLE{todo,
+  AUTHOR =       {Todorov, Tzvetan},
+  TITLE =        {{L}es catégories du récit littéraire},
+  JOURNAL =      {Communication},
+  YEAR =         {1966},
+  volume =       {8},
+  number =       {8},
+  pages =        {125-151},
+    keywords = {litteraire}
+}
+
+@book{triclot2011,
+	address = {Paris},
+	title = {Philosophies des jeux vidéo},
+	publisher = {Editions la Découverte},
+	author = {Triclot, Mathieu},
+	year = {2011},
+  keywords = {pratique}
+}
+
+@BOOK{che,
+  AUTHOR =       {Troyes, Chrétien de},
+  TITLE =        {Le Chevalier au Lion},
+  PUBLISHER =    {Librairie Générale Française},
+  YEAR =         {1998 [1176]},
+  address =      {Paris}
+}
+
+@ARTICLE{whalen,
+  author =       {Whalen, Zach},
+  title =        {Play along~: An approach to videogame music},
+  JOURNAL =      {Game Studies},
+  YEAR =         {2004},
+  url =       {http://www.gamestudies.org/0401/whalen},
+    keywords = {jeu}
+}
+
+@Incollection{steph,
+  AUTHOR =       {Stéphane Bura},
+  editor =       {Nicolas Szilas},
+  booktitle =    {Création de récits pour les fictions interactives},
+  title =      {Ontologie de la fiction interactive dans les jeux vidéo},
+  PUBLISHER =    {Hermes er Lavoisier},
+  YEAR =         {2006},
+  address =      {Paris},
+    keywords = {pratique}
+}
+
+@ARTICLE{frasca,
+  AUTHOR =       {Frasca, Gonzola},
+  TITLE =        {Ludology meets narratology~: Similitude and difference between (video)games and narrative},
+  JOURNAL =      {Parnasso},
+  YEAR =         {1999},
+  number =       {3},
+    keywords = {jeu}
+}
+
+@INBOOK{laub,
+  AUTHOR =       {Michel Laubin},
+  TITLE =        {Antologie littéraire de 1950 à aujourd'hui},
+  CHAPTER =      {Comprendre un texte narratif},
+  PUBLISHER =    {Beauchemin},
+  YEAR =         {2001},
+  address =      {Montréal},
+    keywords = {litteraire}
+}
+
+@MISC{final,
+  title =        {Final Fantasy VI},
+  howpublished = {Square Co.},
+  year =         {1994},
+  keywords =     {corp1},
+}
+
+
+@MISC{age,
+  title =        {Age of Empires II~: The Age of Kings},
+  howpublished = {Ensemble Studios},
+  year =         {1999},
+  keywords =     {corp},
+}
+
+@MISC{ast,
+  title =        {Asteroids},
+  howpublished = {Atari Inc.},
+  year =         {1979},
+  keywords =     {corp},
+}
+@MISC{bas,
+  title =        {Bastion},
+  howpublished = {Warner Bros Games},
+  year =         {2011},
+  keywords =     {corp},
+}
+
+@MISC{col,
+  title =        {Colossal Cave Adventure},
+  howpublished = {Will Crowther \& Don Woods},
+  year =         {1977},
+  keywords =     {corp},
+}
+
+@MISC{final,
+  title =        {Final Fantasy XIV~: A Realm Reborn},
+  howpublished = {Square Enix},
+  year =         {2013},
+  keywords =     {corp},
+}
+@MISC{gra,
+  title =        {Gradius III},
+  howpublished = {Konami},
+  year =         {1991},
+  keywords =     {corp1},
+}
+@MISC{gra11,
+  title =        {Gradius II},
+  howpublished = {Konami},
+  year =         {1988},
+  keywords =     {corp},
+}
+@MISC{gra0,
+  title =        {Gradius},
+  howpublished = {Konami},
+  year =         {1985},
+  keywords =     {corp},
+}
+
+@MISC{gra1,
+  title =        {Gradius Rebirth},
+  howpublished = {Konami},
+  year =         {2009},
+  keywords =     {corp},
+}
+@MISC{king,
+  title =        {Kingdom Hearts},
+  howpublished = {Square Co.},
+  year =         {2002},
+  keywords =     {corp},
+}
+
+@MISC{king1,
+  title =        {King's Quest},
+  howpublished = {Sierra Entertainment},
+  year =         {1984},
+  keywords =     {corp},
+}
+@MISC{man,
+  title =        {Maniac Mansion},
+  howpublished = {Lucasfilm Games},
+  year =         {1987},
+  keywords =     {corp},
+}
+
+@MISC{spa,
+  title =        {Space Invaders},
+  howpublished = {Taito},
+  year =         {1978},
+  keywords =     {corp},
+}
+@MISC{star,
+  title =        {StarCraft},
+  howpublished = {Blizzard Entertainment},
+  year =         {1998},
+  keywords =     {corp},
+}
+
+@MISC{starf,
+  title =        {Star Fox},
+  howpublished = {Nintendo EAD},
+  year =         {1993},
+  keywords =     {corp},
+}
+
+
+@MISC{stree1,
+  title =        {Street Fighter V},
+  howpublished = {capcom},
+  year =         {2011},
+  keywords =     {corp},
+}
+
+@MISC{stree,
+  title =        {Street Fighter II: The World Warrior },
+  howpublished = {Capcom},
+  year =         {1992},
+  keywords =     {corp1},
+}
+
+@MISC{zel,
+  title =        {The Legend of Zelda~: A link to the past},
+  howpublished = {Nintendo EAD},
+  year =         {1991},
+  keywords =     {corp},
+}
+
+@MISC{zeld1,
+  title =        {The Legend of Zelda~: A link between worlds},
+  howpublished = {Nintendo EAD},
+  year =         {2013},
+  keywords =     {corp},
+}
+
+@MISC{mine,
+  title =        {Minecraft},
+  howpublished = {Mojang},
+  year =         {2011},
+  keywords =     {corp},
+}
+
+@MISC{sim,
+  title =        {Sim City},
+  howpublished = {Maxis},
+  year =         {1989},
+  keywords =     {corp},
+}
+
+@MISC{sec,
+  title =        {SecondLife},
+  howpublished = {Linden Lab},
+  year =         {2003},
+  keywords =     {corp},
+}
+
+@MISC{des,
+  title =        {Destiny},
+  howpublished = {Bungie},
+  year =         {2014},
+  keywords =     {corp},
+}
+
+@ARTICLE{eli,
+  AUTHOR =       {Élisabeth Nardout-Lafarge},
+  TITLE =        {Instabilité du lieu dans la fiction narrative contemporaine},
+  JOURNAL =      {Temps zéro},
+  YEAR =         {2013},
+  url =       {http://tempszero.contemporain.info/document974},
+  keywords =     {litteraire},
+}
