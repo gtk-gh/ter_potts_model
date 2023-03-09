@@ -34,5 +34,5 @@ double p_T_z(double T, matrice & M){
             res = res + (1-delta)*s;
         }
     }
-    return exp(-(1/T)*res); // Renvoi 0 car trop grande valeur dans l'exponentielle
+    return exp(-(1/T)*res); // Renvoi 0, car trop grande valeur dans l'exponentielle
 }
