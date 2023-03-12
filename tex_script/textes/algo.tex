@@ -1,15 +1,29 @@
-%! Author = nail
-%! Date = 09/03/2023
-
-% Preamble
-\documentclass[11pt]{article}
-
-% Packages
-\usepackage{amsmath}
+\chapter*{Théorie}
+\addcontentsline{toc}{chapter}{Théorie}
+\newcommand\tab[1][0.8cm]{\hspace*{#1}}
 
 % Document
-\begin{document}
+\section{Clustering}
+\addcontentsline{toc}{section}{Clustering}
+
+\begin{article}
+
+Le principe du clustering est d'identifier des groupes(cluster) dans un jeu de données et de classer les observations
+de ce jeu de données dans ces groupes selon des critères que nous verrons par la suite.
+\newline L'algorithme de clustering le plus répandu est celui des K-means (K-moyennes). Soit $x_i \in \mathbb{R}^d,
+i = 1,\dots,n,$ on souhaite répartir ces n points en q clusters. Soit $z_{ki} = 1$ si $x_i$ appartient au k-ème cluster, 0
+sinon.
+\newline
+\newline L'algorithme des K-moyennes consiste à:
+\newline
+\newline (i) Trouver les centres des clusters que l'on note $\{m_k\}_{k=1}^{q}$ ainsi que les membres $z_{ki}$ de ces
+clusters. Ces membres sont obetnus en minimisant la quantité $\frac{1}{n}\sum_{k=1}^{q}\sum_{i=1}^{n}z_{ki}(x_i-m_k)^t(x_i-m_k)$
+ce qui revient à maximiser $\frac{1}{n}\sum_{i=1}^{n}\sum_{j=1}^{n}\langle x_i,x_j \rangle\sum_{k=1}^{q}\frac{z_{ki}z_{kj}}{n_k} $
+où $n_k$ est le nombre de points du k-ème cluster, $k=1,\dots,q$ et $\langle \cdot,\cdot \rangle$ le produit scalaire sur $\mathbb{R}^d$.
+\newline
+\newline (ii) Les poids $w(i,j,\{z_{ki}\})$ qui sont égales à $\frac{1}{n_k}$ si $x_i$ et $x_j$ sont dans le même cluster k,
+zéro sinon.
 
 
 
-\end{document}
+\end{article}
