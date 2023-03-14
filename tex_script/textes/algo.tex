@@ -1,6 +1,6 @@
 \chapter{Théorie}
 \setcounter{chapter}{2}
-\newcommand\tab[1][0.8cm]{\hspace*{#1}}
+
 
 % Document
 
@@ -8,34 +8,38 @@
 
     \section{Clustering}\label{sec:clustering}
 
-Le principe du clustering est d'identifier des groupes(cluster) dans un jeu de données et de classer les observations
+Le principe du clustering est d'identifier des groupes (cluster) dans un jeu de données et de classer les observations
 de ce jeu de données dans ces groupes selon des critères que nous verrons par la suite.
-\newline L'algorithme de clustering le plus répandu est celui des K-means (K-moyennes). Soit $x_i \in \mathbb{R}^d,
-i = 1,\dots,n,$ on souhaite répartir ces n points en q clusters. Soit $z_{ki} = 1$ si $x_i$ appartient au k-ème cluster, 0
+\newline L'algorithme de clustering le plus répandu est celui des K-moyennes (K-means). Soit $x_i \in \mathbb{R}^d,
+    i = 1,\dots,n,$ on souhaite répartir ces n points en q clusters. Soit $z_{ki} = 1$ si $x_i$ appartient au k-ème cluster, 0
 sinon.
 \newline
-\newline L'algorithme des K-moyennes consiste à:
+    \newline \tab L'algorithme des K-moyennes consiste à:
 \newline
 \newline (i) Trouver les centres des clusters que l'on note $\{m_k\}_{k=1}^{q}$ ainsi que les membres $z_{ki}$ de ces
-clusters. Ces membres sont obetnus en minimisant la quantité $\frac{1}{n}\sum_{k=1}^{q}\sum_{i=1}^{n}z_{ki}(x_i-m_k)^t(x_i-m_k)$
+clusters.
+    Ces membres sont obetnus en minimisant la quantité : $\frac{1}{n}\sum_{k=1}^{q}\sum_{i=1}^{n}z_{ki}(x_i-m_k)^t(x_i-m_k)$
 ce qui revient à maximiser $\frac{1}{n}\sum_{i=1}^{n}\sum_{j=1}^{n}\langle x_i,x_j \rangle\sum_{k=1}^{q}\frac{z_{ki}z_{kj}}{n_k} $
 où $n_k$ est le nombre de points du k-ème cluster, $k=1,\dots,q$ et $\langle \cdot,\cdot \rangle$ le produit scalaire sur $\mathbb{R}^d$.
 \newline
-\newline (ii) Les poids $w(i,j,\{z_{ki}\})$ qui sont égales à $\frac{1}{n_k}$ si $x_i$ et $x_j$ sont dans le même cluster k,
+\newline (ii) Les poids $w(i,j,\{z_{ki}\})$ qui sont égaux à $\frac{1}{n_k}$ si $x_i$ et $x_j$ sont dans le même cluster k,
 zéro sinon.
-\newline Finalement (i) et (ii) nous donne la quantité suivante à maximiser
+\newline Finalement (i) et (ii) nous donnent la quantité suivante à maximiser :
 \newline
     \begin{equation}\label{eq:eq1}
         \tag{1}
         \[\frac{1}{n}\sum_{i=1}^{n}\sum_{j=1}^{n}w(i,j,\{z_{ki}\})\langle x_i,x_j \rangle\]
     \end{equation}
 L'équation \eqref{eq:eq1} peut être généralisée en modifiant le produit scalaire par une mesure de similarité
-    $s(x_i,x_j)$ qui sera à définir. On obtient ainsi
+    $s(x_i,x_j)$ qui sera à définir.
+    On obtient ainsi :
     \newline
     \begin{equation}\label{eq:eq2}
     \tag{2}
     \[\frac{1}{n}\sum_{i=1}^{n}\sum_{j=1}^{n}w(i,j,\{z_{ki}\})s(x_i,x_j)\]
     \end{equation}
+
+
     \section{test 2}\label{sec:test-2}
     TEST 2
 \end{article}
