@@ -23,7 +23,19 @@ où $n_k$ est le nombre de points du k-ème cluster, $k=1,\dots,q$ et $\langle \
 \newline
 \newline (ii) Les poids $w(i,j,\{z_{ki}\})$ qui sont égales à $\frac{1}{n_k}$ si $x_i$ et $x_j$ sont dans le même cluster k,
 zéro sinon.
-
-    \section{test 2}
+\newline Finalement (i) et (ii) nous donne la quantité suivante à maximiser
+\newline
+    \begin{equation}\label{eq:eq1}
+        \tag{1}
+        \[\frac{1}{n}\sum_{i=1}^{n}\sum_{j=1}^{n}w(i,j,\{z_{ki}\})\langle x_i,x_j \rangle\]
+    \end{equation}
+L'équation \eqref{eq:eq1} peut être généralisée en modifiant le produit scalaire par une mesure de similarité
+    $s(x_i,x_j)$ qui sera à définir. On obtient ainsi
+    \newline
+    \begin{equation}\label{eq:eq2}
+    \tag{2}
+    \[\frac{1}{n}\sum_{i=1}^{n}\sum_{j=1}^{n}w(i,j,\{z_{ki}\})s(x_i,x_j)\]
+    \end{equation}
+    \section{test 2}\label{sec:test-2}
     TEST 2
 \end{article}
