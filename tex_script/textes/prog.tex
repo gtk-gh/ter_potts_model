@@ -2,15 +2,36 @@
 %! Date = 09/03/2023
 
 % Preamble
-\documentclass[11pt]{article}
 
 \chapter{Programmation}
-\setcounter{chapter}{2}
-\newcommand\tab[1][0.8cm]{\hspace*{#1}}
+\setcounter{chapter}{1}
 
 % Document
 \begin{article}
+    \section{Préambule}\label{sec:preambule}%
+    Pour implementer le modèle de Potts, nous allons suivre le schema que nous avons mis en place afin de pouvoir générer des modèles le plus simplement possible.
+    \newline On a donc diviser les taches selon ce schema :
+    \newline
+    \begin{figure}[ht]
+        \centering
+        \includegraphics[scale=0.09]{./img/prog/Schema_prog}
+        \caption{Schema de programmation}
+        \label{fig1}
+    \end{figure}
 
-test
+    On a, selon ce schema, deux langages de programmation differents le C++ et le Python.
 
+    \section{Explication}\label{sec:explication}
+    \subsection{C++}
+    \noindent On va donc implémenter donc 3 classes differentes :
+    \begin{description}
+        \item[point] Une classe de point avec 2 coordonnées dont chacun ont un état, dans cette classe nous aurons des fonctions qui modifieront les propriétes des points.
+        \item[matrice] Cette classe va nous permettre d'avoir une matrice de point.
+        \item[vecteur-template] Ce n'est pas vraiment une classe, car ici nous allons utiliser la classe deja présente en C++, vector\footnote{Documentation officielle de la classe sur : https://cplusplus.com/reference/vector/vector/}.
+        Nous allons donc ajouter des fonctions propres à cette classe pour pouvoir l'utiliser avec les points.
+    \end{description}
+    \newline
+    On pourra donc grâce à ces classes implementer le modèle de Potts.
+    \newline On a choisis de faire des classes et donc de se rajouter une charge de travail au debut car cela semblait plus approprié et nous permettait aussi de parfaire notre niveau de programmation dans le langage C++.
+    \newline
 \end{article}
