@@ -8,14 +8,25 @@
 
 using namespace std;
 
-matrice f(matrice M){
+matrice f(const matrice & M){
     matrice res = M;
     int n = res.getFullSize();
+    vector<double> etat = res.getVecEtat();
+    int e = etat.size();
     srand (time(NULL));
-    int randN = rand() % n;
+    int randU = rand() % n;
+    int randV = rand() % e;
+    //shared_ptr<point> Point = res.getSommet(randU);
+    //cout << Point << randU << randV<<endl;
 
+    shared_ptr<point> sommetPtr = (res.getSommet(randU));
+    double etatValue = etat[randV];
+    changeEtat(sommetPtr, etatValue);
+    //cout << Point;
+
+    return res;
 }
-
+/*
 double p_T_z(double T, matrice & M){
     // Initialisation de variable
     double delta , res, s;
@@ -44,3 +55,5 @@ double p_T_z(double T, matrice & M){
     }
     return exp(-(1/T)*res); // Renvoi 0, car trop grande valeur dans l'exponentielle
 }
+
+ */

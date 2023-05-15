@@ -8,7 +8,7 @@
 #include "matrice.h"
 
 
-matrice f(matrice);
+matrice f(const matrice & M);
 
 double p_T_z(double T, matrice & M);
 
