@@ -9,6 +9,8 @@ matrice :: matrice(int n, int m){
     this ->size2 = m;
     this -> fullsize = n*m;
     this -> matrix = new vector<point>[n]; // vecteur de pointeur de vecteur
+    vector<double> etat({0});
+    this -> etats = etat;
     vector<point> v(m); // vecteur de point (il représente une ligne)
     for (int i = 0; i<n; i++){
         this -> matrix[i] = v;
@@ -29,6 +31,7 @@ matrice::matrice(int n,int m ,vector<double> etat){
     this ->size2 = m;
     this->fullsize = n*m;
     this -> matrix = new vector<point>[n];
+    this -> etats = etat;
     vector<point> v(m);
     for (int i = 0; i<n; i++){
         this -> matrix[i] = v;
@@ -132,4 +135,8 @@ shared_ptr<point> matrice::getSommet(int i){
 
 vector<shared_ptr<point>> matrice::getAllSommet(){
     return this->sommet;
+}
+
+vector<double> matrice::getVecEtat() {
+    return this->etats;
 }

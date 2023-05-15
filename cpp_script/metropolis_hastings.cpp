@@ -8,6 +8,14 @@
 
 using namespace std;
 
+matrice f(matrice M){
+    matrice res = M;
+    int n = res.getFullSize();
+    srand (time(NULL));
+    int randN = rand() % n;
+
+}
+
 double p_T_z(double T, matrice & M){
     // Initialisation de variable
     double delta , res, s;

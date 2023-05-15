@@ -9,6 +9,7 @@
 #include <stdlib.h>
 #include <memory>
 
+
 class matrice {
 private:
     int size1;  // dimension des lignes de la matrice
@@ -16,9 +17,10 @@ private:
     int fullsize; // nb de lignes * nb de colonnes
     vector<point>* matrix;     // chaque ligne de la matrice est un vecteur de points
     vector<shared_ptr<point>> sommet; // tous les points sont dans un seul vecteur
+    vector<double> etats;
 
 public:
-    matrice() {this -> size1 =0; this -> size2 = 0;this->fullsize = 0;}; // on initialise la taille de la matrice à 0
+    matrice() {this -> size1 =0; this -> size2 = 0;this->fullsize = 0; vector<double> etat({0}); this -> etats = etat;}; // on initialise la taille de la matrice à 0
     matrice(int,int);   // Affecte deux entiers à size1,2 de la matrice et initialise les coefficients à 0
     matrice(int,int,vector<double>); // construit une matrice avec état aléatoire selon un vecteur d'etat
     ~matrice();         // destructeur
@@ -38,6 +40,7 @@ public:
 
     vector<shared_ptr<point>> getAllSommet(); // renvoie tous les sommets sous forme de vecteur de pointeur
     shared_ptr<point> getSommet(int i); // renvoie un pointeur de sommet à la pos i
+    vector<double> getVecEtat();
 };
 
 
