@@ -8,7 +8,7 @@
 
 using namespace std;
 
-matrice f(const matrice & M){
+matrice q(matrice & M){
     matrice res = M;
     int n = res.getFullSize();
     vector<double> etat = res.getVecEtat();
@@ -16,17 +16,13 @@ matrice f(const matrice & M){
     srand (time(NULL));
     int randU = rand() % n;
     int randV = rand() % e;
-    //shared_ptr<point> Point = res.getSommet(randU);
-    //cout << Point << randU << randV<<endl;
-
     shared_ptr<point> sommetPtr = (res.getSommet(randU));
     double etatValue = etat[randV];
     changeEtat(sommetPtr, etatValue);
-    //cout << Point;
-
     return res;
 }
-/*
+
+
 double p_T_z(double T, matrice & M){
     // Initialisation de variable
     double delta , res, s;
@@ -56,4 +52,30 @@ double p_T_z(double T, matrice & M){
     return exp(-(1/T)*res); // Renvoi 0, car trop grande valeur dans l'exponentielle
 }
 
- */
+vector<matrice> mh1(int n, matrice X0, double T){
+    /// INITIALISATION ///
+    vector<matrice> res;
+    res.push_back(X0);//initialisation de X0 dans le vecteur résultat
+
+    matrice Y; // matrice Y généré par la loi instrumentale
+
+    /// BOUCLE ///
+    for (int i = 1 ; i<n; i++){
+        Y = q(res[i-1]); // generation du candidat depuis X_(n-1) grâce à la loi instrumentale
+
+        // CALCUL DE ALPHA
+        double alpha = 1;
+        double temp = p_T_z(T,Y) / p_T_z(T,res[i-1]);
+        if(temp<alpha) alpha = temp;
+
+        // VALIDATION DE ALPHA
+
+        //random uniforme entre [0,1]
+        random_device rd;
+        mt19937 gen(rd());
+        uniform_real_distribution<double> dis(0.0, 1.0);
+        double randomValue = dis(gen);
+
+
+    }
+}

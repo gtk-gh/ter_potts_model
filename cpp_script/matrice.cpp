@@ -116,3 +116,7 @@ shared_ptr<point> matrice::getSommet(int i)
 vector<shared_ptr<point>> matrice::getAllSommet(){
     return this->sommet;
 }
+
+vector<double> matrice::getVecEtat() {
+    return this->etats;
+}
