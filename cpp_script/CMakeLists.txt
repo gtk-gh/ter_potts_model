@@ -3,4 +3,4 @@ project(cpp_script)
 
 set(CMAKE_CXX_STANDARD 23)
 
-add_executable(cpp_script main.cpp vecteur_template.cpp point.cpp metropolis_hastings.cpp matrice.cpp)
+add_executable(cpp_script main.cpp point.cpp metropolis_hastings.cpp matrice.cpp vector_double.h)

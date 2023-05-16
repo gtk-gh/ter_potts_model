@@ -12,6 +12,6 @@ matrice q(matrice & M);
 
 double p_T_z(double T, matrice & M);
 
-vector<matrice> mh1(int n, matrice X0);
+vector<matrice> mh1(int n, matrice & X0,double);
 
 #endif //CPP_SCRIPT_METROPOLIS_HASTINGS_H

@@ -68,6 +68,7 @@ matrice& matrice::operator = (const matrice& mat){
         this->size2 = mat.size2;}
     assert((this->size1==mat.size1)&&(this->size2==mat.size2));
     this->sommet = mat.sommet;
+    this->fullsize = mat.fullsize;
     return (*this);
 }
 
