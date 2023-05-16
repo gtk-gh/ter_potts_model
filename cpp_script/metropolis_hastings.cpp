@@ -9,12 +9,12 @@
 
 using namespace std;
 
-matrice q(matrice & M){
-    matrice res = M;
+matrice q(const matrice & M){
+    matrice res;
+    res = M;
     int n = res.getFullSize();
     vector<double> etat = res.getVecEtat();
     int e = etat.size();
-    srand (time(NULL));
     int randU = rand() % n;
     int randV = rand() % e;
     shared_ptr<point> sommetPtr = (res.getSommet(randU));
@@ -64,18 +64,19 @@ vector<matrice> mh1(int n, matrice & X0, double T){
     /// BOUCLE ///
     for (int i = 1 ; i<n; i++){
         matrice Y; // matrice Y généré par la loi instrumentale
+        //usleep(rand()%10000);
         Y = q(res[i-1]); // generation du candidat depuis X_(n-1) grâce à la loi instrumentale
 
         // CALCUL DE ALPHA
         double alpha = 1;
         double temp = p_T_z(T,Y) / p_T_z(T,res[i-1]);
         if(temp<alpha) alpha = temp;
-        //cout << res[i-1].getVecEtat() << " " << Y.getVecEtat() << endl;
-        cout << p_T_z(T,res[i-1]) << " " << p_T_z(T,Y) << endl;
+        //cout << res[i-1].getEtatSom() << " " << Y.getEtatSom() << endl;
+        //cout << p_T_z(T,res[i-1]) << " " << p_T_z(T,Y) << endl;
 
         // VALIDATION DE ALPHA
-        srand(time(NULL)); // initialisation de la seed
-        usleep(rand()%10000); // sleep de l'ordinateur aléatoire en ms (pour une meilleure initialisation)
+        // initialisation de la seed
+        //usleep(rand()%10000); // sleep de l'ordinateur aléatoire en ms (pour une meilleure initialisation)
 
         double u = ((double)rand()/(double)RAND_MAX); //génération d'un double compris entre 0 et 1 de manière uniforme
 
@@ -89,5 +90,6 @@ vector<matrice> mh1(int n, matrice & X0, double T){
 
     }
     cout << "Il y à eu "<<accept<<" acceptations." << endl <<"Ce qui fait un taux d'acceptation de "<<double(accept)/n<<".";
+    cout << endl << res[n-1];
     return res;
 }

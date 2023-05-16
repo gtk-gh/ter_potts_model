@@ -21,6 +21,7 @@ public:
     matrice() {this -> size1 =0; this -> size2 = 0;this->fullsize = 0; vector<double> etat({0}); this -> etats = etat;}; // on initialise la taille de la matrice à 0
     matrice(int,int);   // Affecte deux entiers à size1,2 de la matrice et initialise les coefficients à 0
     matrice(int,int,vector<double>); // construit une matrice avec état aléatoire selon un vecteur d'etat
+    matrice(int,int,vector<double>,vector<double>); // constructeur avec un vecteur de sommet
     ~matrice();         // destructeur
 
     int getSize1(); // renvoie le nombre de lignes
@@ -30,6 +31,7 @@ public:
     vector<shared_ptr<point>> getAllSommet(); // renvoie tous les sommets sous forme de vecteur de pointeur
     shared_ptr<point> getSommet(int); // renvoie un sommet
     vector<double> getVecEtat();
+    vector<double> getEtatSom();
 
     shared_ptr<point> operator() (int , int); // Renvoie le point i,j
     matrice& operator = (const matrice&); // surcharge de = (affectation)

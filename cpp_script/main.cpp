@@ -4,18 +4,24 @@
 using namespace std;
 
 int main() {
-    vector<double> etat({0,1,2});
-    matrice M = matrice(5,5,etat);
-    vector<double> test=M.getVecEtat();
-    //cout << etat << endl;
+    srand (time(NULL));
+    vector<double> etat({0,1});
+    int size = 5;
+    vector<double> som;
+    for (int i = 0; i<size*size; i++){
+        som.push_back(0);
+    }
+    matrice M = matrice(size,size,som,etat);
+    cout <<M;
     //matrice P = q(M);
+    //cout <<endl << M << endl << P;
+    //cout << M<< endl <<P;
     //cout << p_T_z(290,M);
-    vector<double> temp({1,2,3});
-    cout << temp;
-    int n = 10;
+
+    int n = 100;
 
     vector<matrice> MH1;
-    //MH1 = mh1(n,M,290);
+    MH1 = mh1(n,M,290);
     for (int i =0; i<n; i++){
         //cout << endl <<MH1[i];
     }
