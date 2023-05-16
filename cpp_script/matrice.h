@@ -40,7 +40,7 @@ public:
 
     friend void save_matr(const char*, matrice &); // sauvegarde la matrice dans un txt
     friend ostream& operator <<(ostream&, matrice&); // Affichage matrice
-
+    friend void save_matr2(const char*, vector<matrice> &);
 };
 
 

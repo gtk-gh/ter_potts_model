@@ -121,6 +121,24 @@ void save_matr(const char* Nomfich, matrice & mat){
     fichier.close();           // fermeture du fichier
 }
 
+void save_matr2(const char* Nomfich, vector<matrice> & mats){
+    ofstream fichier;
+    fichier.open(Nomfich);
+
+    int n = mats.size();
+    fichier << n <<"\n" <<mats[0].getSize1() << "\n" << mats[0].getSize2() << "\n";
+    for (int m = 0; m<n ; m++){
+        for (int i=0; i<mats[m].getSize1() ; i++){
+            for (int j = 0 ; j < mats[m].getSize2()-1 ; j++){
+                fichier << mats[m](i,j)->getEtat() << " ";
+            }
+            fichier << mats[m](i,mats[m].getSize2()-1)->getEtat() << "\n";
+        }
+        fichier << "\n";
+    }
+    fichier.close();           // fermeture du fichier
+}
+
 // Surcharge << affichage matrice
 ostream& operator <<(ostream& s, matrice& M){
     for (int i=0; i<M.size1; i++){
