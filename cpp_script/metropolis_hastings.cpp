@@ -23,10 +23,24 @@ matrice q(const matrice & M){
     return res;
 }
 
+int sim(int i, int j, vector<int> classes){
+    // le but ici est de construire des similarités entre les sommets
+    // int i et j représentent lse sommets i et j respectivement que l'on veut tester
+    // vector<double> classes représente un vector de sommet avec comme valeur sa classe par défaut la classe 0 ne
+    // représente aucune similarité
+    // exemple : [ 0 , 1, 0 ,1 ,2 ,2] ici le sommet 0 et 2 n'ont aucune similarité avec d'autres sommets,
+    // le sommet 1 et 3 ont les memes similarités et le 4 et 5 aussi.
+    int res = 0;
+    if ((classes[i] == classes[j]) && (classes[i] != 0)){
+        res = 1;
+    }
+    return res;
+}
 
-double p_T_z(double T, matrice & M){
+double p_T_z(double T, matrice & M, vector<int> simil){
     // Initialisation de variable
-    double delta , res, s;
+    double delta , res;
+    int s;
     res = 0;
     // on récupère toutes les valeurs de la matrice + sa taille
     vector<shared_ptr<point>> AllSommet = M.getAllSommet();
@@ -45,16 +59,16 @@ double p_T_z(double T, matrice & M){
             if(abs(point_i->getEtat() - point_j->getEtat() ) < pow(10,-9)) delta = 1;
 
             // on calcule s
-            s = p_scalaire(point_i, point_j);
-            s = 1;
+            s = sim(i, j, simil);
+            //s = 1;
             // on rajoute au res
             res = res + (1-delta)*s;
         }
     }
-    return exp(-(1/T)*res); // Renvoi 0, car trop grande valeur dans l'exponentielle
+    return exp(-(1/(2*T))*res); // Renvoi 0, car trop grande valeur dans l'exponentielle
 }
 
-vector<matrice> mh1(int n, matrice & X0, double T){
+vector<matrice> mh1(int n, matrice & X0, double T,vector<int> simil){
     /// INITIALISATION ///
     vector<matrice> res;
     res.push_back(X0);//initialisation de X0 dans le vecteur résultat
@@ -69,14 +83,9 @@ vector<matrice> mh1(int n, matrice & X0, double T){
 
         // CALCUL DE ALPHA
         double alpha = 1;
-        double temp = p_T_z(T,Y) / p_T_z(T,res[i-1]);
+        double temp = p_T_z(T,Y,simil) / p_T_z(T,res[i-1],simil);
+        //cout << p_T_z(T,Y,simil) << endl;
         if(temp<alpha) alpha = temp;
-        //cout << res[i-1].getEtatSom() << " " << Y.getEtatSom() << endl;
-        //cout << p_T_z(T,res[i-1]) << " " << p_T_z(T,Y) << endl;
-
-        // VALIDATION DE ALPHA
-        // initialisation de la seed
-        //usleep(rand()%10000); // sleep de l'ordinateur aléatoire en ms (pour une meilleure initialisation)
 
         double u = ((double)rand()/(double)RAND_MAX); //génération d'un double compris entre 0 et 1 de manière uniforme
 
@@ -90,6 +99,6 @@ vector<matrice> mh1(int n, matrice & X0, double T){
 
     }
     cout << "Il y à eu "<<accept<<" acceptations." << endl <<"Ce qui fait un taux d'acceptation de "<<double(accept)/n<<".";
-    cout << endl << res[n-1];
+   // cout << endl << res[n-1];
     return res;
 }
