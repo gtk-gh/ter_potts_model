@@ -5,7 +5,7 @@
 #ifndef CPP_SCRIPT_SWENDSEN_WANG_H
 #define CPP_SCRIPT_SWENDSEN_WANG_H
 
-#include "matrice.h"
+#include "metropolis_hastings.h"
 #endif //CPP_SCRIPT_SWENDSEN_WANG_H
 
 matrice generate_clusters(matrice& config, double beta );

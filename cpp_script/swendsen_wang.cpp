@@ -19,22 +19,22 @@ matrice generate_clusters(matrice& config, double beta ){
     matrice clusters = matrice(n,n); // nous indiquera à quel cluster est assigné chaque point
     matrice visited = matrice(n,n); // est ce que le point est visité ?
 
-    auto current_cluster = 1;
+    int current_cluster = 1;
     vector<pair<int,int>> active;
 
     random_device rd;
     mt19937 gen(rd());
     uniform_real_distribution<>dis(0.0,1.0);
 
-    auto etendre_cluster = [&](int row, int col, auto cluster){ // fonction lambda
+    auto etendre_cluster = [&](int row, int col, int cluster){ // fonction lambda
         visited(row,col)->changeEtat(1.0);
         clusters(row,col)->changeEtat(cluster);
 
         vector<pair<int,int>> voisins; // on stockera les voisins de chaque point dans cette variable
         if(row>0) voisins.emplace_back(row-1,col); //voisin ouest
-        if(row<n-1) voisins.template emplace_back(row+1,col); // voisin est
-        if(col>0) voisins.template emplace_back(row,col-1); // voisin sud
-        if(col<n-1) voisins.template emplace_back(row,col+1); // voisin nord
+        if(row<n-1) voisins.emplace_back(row+1,col); // voisin est
+        if(col>0) voisins.emplace_back(row,col-1); // voisin sud
+        if(col<n-1) voisins.emplace_back(row,col+1); // voisin nord
 
         for(const auto& voisin : voisins){
             int voisin_row = voisin.first;
