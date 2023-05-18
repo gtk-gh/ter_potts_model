@@ -22,7 +22,6 @@ matrice :: matrice(int n, int m){
 matrice::matrice(int n,int m ,vector<double> etat){
     // on fait la meme chose que le premier constructeur sauf que l'état n'est plus 0 mais une valeur random
     // du vecteur etat
-    srand (time(NULL)); // initialisation du random en fonction du timer de l'ordinateur
     this ->size1 = n;
     this ->size2 = m;
     this->fullsize = n*m;
@@ -32,6 +31,21 @@ matrice::matrice(int n,int m ,vector<double> etat){
             int randEtat = rand() % etat.size();// on génère une valeur comprise entre 0 et length d'état
             double tempEtat = etat[randEtat];
             auto temp2 = make_shared<point>(i,j,tempEtat);
+            sommet.push_back(temp2);
+        }
+    }
+}
+
+matrice::matrice(int n,int m,vector<double> sommets,vector<double> etat){
+    // on fait la meme chose que le premier constructeur sauf que l'état n'est plus 0 mais une valeur random
+    // du vecteur etat
+    this ->size1 = n;
+    this ->size2 = m;
+    this->fullsize = n*m;
+    this -> etats = etat;
+    for (int i = 0; i<n; i++){
+        for (int j = 0; j<m; j++){
+            auto temp2 = make_shared<point>(i,j,sommets[i*n+j]);
             sommet.push_back(temp2);
         }
     }
@@ -67,8 +81,18 @@ matrice& matrice::operator = (const matrice& mat){
     {this->size1 = mat.size1;
         this->size2 = mat.size2;}
     assert((this->size1==mat.size1)&&(this->size2==mat.size2));
-    this->sommet = mat.sommet;
     this->fullsize = mat.fullsize;
+    this->etats = mat.etats;
+    for (int i = 0 ; i < this->size1; i++){
+        for (int j = 0; j < this->size2; j++){
+            auto temp2 = make_shared<point>(i,j,mat.sommet[i*this->size1 + j]->getEtat());
+            this->sommet.push_back(temp2);
+        }
+    }
+
+    //vector<shared_ptr<point>> matS = mat.sommet;
+    //    for (const auto& e : matS)
+    //        this->sommet.push_back(e->clone());
     return (*this);
 }
 
@@ -97,6 +121,24 @@ void save_matr(const char* Nomfich, matrice & mat){
     fichier.close();           // fermeture du fichier
 }
 
+void save_matr2(const char* Nomfich, vector<matrice> & mats){
+    ofstream fichier;
+    fichier.open(Nomfich);
+
+    int n = mats.size();
+    fichier << n <<"\n" <<mats[0].getSize1() << "\n" << mats[0].getSize2() << "\n";
+    for (int m = 0; m<n ; m++){
+        for (int i=0; i<mats[m].getSize1() ; i++){
+            for (int j = 0 ; j < mats[m].getSize2()-1 ; j++){
+                fichier << mats[m](i,j)->getEtat() << " ";
+            }
+            fichier << mats[m](i,mats[m].getSize2()-1)->getEtat() << "\n";
+        }
+        fichier << "\n";
+    }
+    fichier.close();           // fermeture du fichier
+}
+
 // Surcharge << affichage matrice
 ostream& operator <<(ostream& s, matrice& M){
     for (int i=0; i<M.size1; i++){
@@ -120,4 +162,12 @@ vector<shared_ptr<point>> matrice::getAllSommet(){
 
 vector<double> matrice::getVecEtat() {
     return this->etats;
+}
+
+vector<double> matrice::getEtatSom() {
+    vector<double> res;
+    for (int i = 0; i<this->fullsize; i++){
+        res.push_back(this->sommet[i]->getEtat());
+    }
+    return res;
 }
