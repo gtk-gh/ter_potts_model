@@ -40,23 +40,26 @@ matrice generate_clusters(matrice& config, double beta ){
             int voisin_row = voisin.first;
             int voisin_col = voisin.second;
 
+            // Conditions pour ajouter le voisin au cluster
             if((visited(voisin_row,voisin_col)->getEtat() == 0.0) && config(row,col)->getEtat() == config(voisin_row,voisin_col)->getEtat()){
                 double p = 1.0 - exp(-beta);
                 if(dis(gen)<=p){
-                    active.emplace_back(voisin_row,voisin_col);
-                    visited(voisin_row,voisin_col)->changeEtat(1.0);
+                    active.emplace_back(voisin_row,voisin_col);  // On ajoute le voisin pour le visiter plus tard
+                    visited(voisin_row,voisin_col)->changeEtat(1.0); // On le marque comme visité
                 }
             }
         }
     };
 
+    // On parcourt la grille pour créer des clusters
     for(int i=0;i<n;i++){
         for(int j=0;j<n;j++){
             if(visited(i,j)->getEtat()==0){
-                etendre_cluster(i,j,current_cluster);
+                etendre_cluster(i,j,current_cluster); // On regarde si on peut créer un cluster à partir de ce point
 
+                // On regarde si on peut étendre le cluster à partir des voisins du point précédent
                 while(!active.empty()){
-                    auto current = active.back();
+                    pair<int,int> current = active.back();
                     active.pop_back();
                     etendre_cluster(current.first, current.second, current_cluster);
                 }
