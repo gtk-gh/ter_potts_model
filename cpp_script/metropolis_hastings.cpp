@@ -5,7 +5,7 @@
 #include "metropolis_hastings.h"
 
 #include <iostream>
-#include <unistd.h>
+
 
 using namespace std;
 
@@ -15,11 +15,12 @@ matrice q(const matrice & M){
     int n = res.getFullSize();
     vector<double> etat = res.getVecEtat();
     int e = etat.size();
-    int randU = rand() % n;
-    int randV = rand() % e;
+    int randU = rand() % n; // choix d'un sommet aléatoire uniformément
+    int randV = rand() % e; // choix d'un état aléatoire uniformément
     shared_ptr<point> sommetPtr = (res.getSommet(randU));
     double etatValue = etat[randV];
     changeEtat(sommetPtr, etatValue);
+    //changeEtat(sommetPtr, (int(sommetPtr->getEtat()) +1) %2);
     return res;
 }
 
@@ -42,7 +43,8 @@ vector<int> voisin(int i, matrice & M){
             voisin.push_back(i+n);
         }
     }
-    else if (i < (n*(m-1))){ // derniere ligne
+    else if (i>=n*m){} // hors de la matrice
+    else if (i > (n*(m-1))){ // derniere ligne
         if ((i%n) == 0){
             voisin.push_back(i-n);
             voisin.push_back(i+1);
@@ -57,7 +59,7 @@ vector<int> voisin(int i, matrice & M){
             voisin.push_back(i+n);
         }
     }
-    else {// le reste
+    else {// le reste de la matrice
         if ((i%n) == 0) { // coté gauche
             voisin.push_back(i-n);
             voisin.push_back(i+1);
@@ -68,7 +70,7 @@ vector<int> voisin(int i, matrice & M){
             voisin.push_back(i-1);
             voisin.push_back(i+n);
         }
-        else {
+        else { // le reste
             voisin.push_back(i-n);
             voisin.push_back(i-1);
             voisin.push_back(i+n);
@@ -107,7 +109,7 @@ double p_T_z(double T, matrice & M, vector<int> simil){
     shared_ptr<point> point_j;
     for (int i = 0;i<f;i++){
         point_i = M.getSommet(i);
-        vector<int> voisin;
+        vector<int> voisinage = voisin(i,M);
         for (int j = 0;j<f;j++){
             delta = 0;
             s = 0;
@@ -116,9 +118,11 @@ double p_T_z(double T, matrice & M, vector<int> simil){
             // on calcule delta
             if(abs(point_i->getEtat() - point_j->getEtat() ) < pow(10,-9)) delta = 1;
 
-
+            if (find(voisinage.begin(), voisinage.end(), j) != voisinage.end()){
+                s = sim(i, j, simil);
+            }
+            //s = sim(i, j, simil);
             // on calcule s
-            s = sim(i, j, simil);
             //s = 1;
             // on rajoute au res
             res = res + (1-delta)*s;

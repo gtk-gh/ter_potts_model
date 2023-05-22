@@ -6,8 +6,7 @@
 #include <iostream>
 #include <time.h>
 #include <unistd.h>
-#include <algorithm>
-#include <random>
+
 
 using namespace std;
 
