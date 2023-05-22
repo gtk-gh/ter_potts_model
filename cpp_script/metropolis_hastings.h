@@ -16,4 +16,6 @@ vector<matrice> mh1(int n, matrice & X0,double,vector<int> simil);
 
 int sim(int,int,vector<int>);
 
+vector<int> voisin(int,matrice &);
+
 #endif //CPP_SCRIPT_METROPOLIS_HASTINGS_H

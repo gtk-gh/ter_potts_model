@@ -29,9 +29,9 @@ int main() {
 
     matrice M = matrice(size,size,som,etat);
     //cout << M;
-    int n = 1000;
+    int n = 100;
     vector<matrice> MH1;
-    MH1 = mh1(n,M,290,simil);
+    MH1 = mh1(n,M,100,simil);
 
     save_matr2("../../py_script/temp.txt", MH1);
     return 0;

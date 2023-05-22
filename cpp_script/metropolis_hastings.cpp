@@ -23,6 +23,61 @@ matrice q(const matrice & M){
     return res;
 }
 
+vector<int> voisin(int i, matrice & M){
+    int n = M.getSize1();
+    int m = M.getSize2();
+    vector<int> voisin;
+    if (i<n){ // premiere ligne
+        if (i == 0){
+            voisin.push_back(1);
+            voisin.push_back(n);
+        }
+        else if (i == (n-1)){
+            voisin.push_back(i-1);
+            voisin.push_back(i+n);
+        }
+        else {
+            voisin.push_back(i-1);
+            voisin.push_back(i+1);
+            voisin.push_back(i+n);
+        }
+    }
+    else if (i < (n*(m-1))){ // derniere ligne
+        if ((i%n) == 0){
+            voisin.push_back(i-n);
+            voisin.push_back(i+1);
+        }
+        else if (i%n == (n-1)){
+            voisin.push_back(i-n);
+            voisin.push_back(i-1);
+        }
+        else {
+            voisin.push_back(i-1);
+            voisin.push_back(i+1);
+            voisin.push_back(i+n);
+        }
+    }
+    else {// le reste
+        if ((i%n) == 0) { // coté gauche
+            voisin.push_back(i-n);
+            voisin.push_back(i+1);
+            voisin.push_back(i+n);
+        }
+        else if ((i%n) == (n-1)) { // coté droit
+            voisin.push_back(i-n);
+            voisin.push_back(i-1);
+            voisin.push_back(i+n);
+        }
+        else {
+            voisin.push_back(i-n);
+            voisin.push_back(i-1);
+            voisin.push_back(i+n);
+            voisin.push_back(i+1);
+        }
+    }
+    return voisin;
+}
+
 int sim(int i, int j, vector<int> classes){
     // le but ici est de construire des similarités entre les sommets
     // int i et j représentent lse sommets i et j respectivement que l'on veut tester
@@ -42,21 +97,25 @@ double p_T_z(double T, matrice & M, vector<int> simil){
     double delta , res;
     int s;
     res = 0;
+    int n = M.getSize1();
+    int m = M.getSize2();
     // on récupère toutes les valeurs de la matrice + sa taille
     vector<shared_ptr<point>> AllSommet = M.getAllSommet();
-    int n = M.getFullSize();
+    int f = M.getFullSize();
     // on crée deux variables de point pour parcourir tous les points de la matrice
     shared_ptr<point> point_i;
     shared_ptr<point> point_j;
-    for (int i = 0;i<n;i++){
+    for (int i = 0;i<f;i++){
         point_i = M.getSommet(i);
-        for (int j = 0;j<n;j++){
+        vector<int> voisin;
+        for (int j = 0;j<f;j++){
             delta = 0;
             s = 0;
             point_j = M.getSommet(j);
 
             // on calcule delta
             if(abs(point_i->getEtat() - point_j->getEtat() ) < pow(10,-9)) delta = 1;
+
 
             // on calcule s
             s = sim(i, j, simil);
