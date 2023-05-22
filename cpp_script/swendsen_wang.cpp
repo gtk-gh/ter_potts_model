@@ -15,7 +15,7 @@ using namespace std;
 // Fonction pour générer les clusters via la procédure de percolation
 matrice generate_clusters(matrice& config, double beta ){
     int n = config.getSize1(); // taille de la grille
-    int E = *max_element(config.getVecEtat().begin(), config.getVecEtat().end()); // nb d'états
+    int E = normeinf(config.getVecEtat()); // nb d'états
     matrice clusters = matrice(n,n); // nous indiquera à quel cluster est assigné chaque point
     matrice visited = matrice(n,n); // est ce que le point est visité ?
 
@@ -72,10 +72,30 @@ matrice generate_clusters(matrice& config, double beta ){
 }
 
 
-//Fonction pour mettre à jour la configuration ( à terminer)
 
-matrice update_configuration(matrice& config, matrice& clusters){
-    int n = config.getSize1();
-    matrice new_config = matrice(n,n);
+matrice update_configuration( matrice& config, matrice& clusters){
+    int n = clusters.getSize1();
+    int E = normeinf(config.getVecEtat());
+    cout << E;
+    matrice new_config(n,n,config.getVecEtat());
+
+    random_device rd;
+    mt19937 gen(rd());
+    uniform_int_distribution<> dis(0, E);
+
+    int new_etat;
+
+    for(int cluster = 1; cluster<= clusters.getEtatSom().back(); cluster++){
+        new_etat = dis(gen);
+        for(int i = 0; i<n; i++){
+            for(int j = 0; j<n; j++){
+
+                // On vérifie qu'on est dans le bon cluster
+                if(clusters(i,j)->getEtat() == cluster){
+                    new_config(i,j)->changeEtat(new_etat);
+                }
+            }
+        }
+    }
     return new_config;
 }
