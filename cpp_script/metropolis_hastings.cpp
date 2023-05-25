@@ -43,7 +43,7 @@ vector<int> voisin(int i, matrice & M){
         }
     }
     else if (i>=n*m){} // hors de la matrice
-    else if (i > (n*(m-1))){ // derniere ligne
+    else if (i >= (n*(m-1))){ // derniere ligne
         if ((i%n) == 0){
             voisin.push_back(i-n);
             voisin.push_back(i+1);
@@ -55,7 +55,7 @@ vector<int> voisin(int i, matrice & M){
         else {
             voisin.push_back(i-1);
             voisin.push_back(i+1);
-            voisin.push_back(i+n);
+            voisin.push_back(i-n);
         }
     }
     else {// le reste de la matrice
@@ -87,13 +87,13 @@ int sim(int i, int j, vector<int> classes){
     // exemple : [ 0 , 1, 0 ,1 ,2 ,2] ici le sommet 0 et 2 n'ont aucune similarité avec d'autres sommets,
     // le sommet 1 et 3 ont les memes similarités et le 4 et 5 aussi.
     int res = 0;
-    if ((classes[i] == classes[j])){
+    if (classes[i] == classes[j]){
         res = 1;
     }
     return res;
 }
 
-double p_T_z(double T, matrice & M, vector<int> simil){
+double p_T_z2(double T, matrice & M, vector<int> simil){
     // Initialisation de variable
     double delta , res;
     int s;
@@ -109,17 +109,13 @@ double p_T_z(double T, matrice & M, vector<int> simil){
     for (int i = 0;i<f;i++){
         point_i = M.getSommet(i);
         vector<int> voisinage = voisin(i,M);
-        for (int j = 0;j<f;j++){
+        for (int j = 0;j<voisinage.size();j++){
             delta = 0;
-            s = 0;
-            point_j = M.getSommet(j);
-
+            point_j = M.getSommet(voisinage[j]);
             // on calcule delta
             if(abs(point_i->getEtat() - point_j->getEtat() ) < pow(10,-9)) delta = 1;
 
-            if (find(voisinage.begin(), voisinage.end(), j) != voisinage.end()){
-                s = sim(i, j, simil);
-            }
+            s = sim(i, voisinage[j], simil);
             res = res + (1-delta)*s;
         }
     }
@@ -136,18 +132,13 @@ vector<matrice> mh1(int n, matrice & X0, double T,vector<int> simil){
     /// BOUCLE ///
     for (int i = 1 ; i<n; i++){
         matrice Y; // matrice Y généré par la loi instrumentale
-        //usleep(rand()%10000);
         Y = q(res[i-1]); // generation du candidat depuis X_(n-1) grâce à la loi instrumentale
 
         // CALCUL DE ALPHA
         double alpha = 1;
-        double temp = p_T_z(T,Y,simil) / p_T_z(T,res[i-1],simil);
-        //cout << p_T_z(T,Y,simil) << endl;
+        double temp = p_T_z2(T,Y,simil) / p_T_z2(T,res[i-1],simil);
         if(temp<alpha) alpha = temp;
-
         double u = ((double)rand()/(double)RAND_MAX); //génération d'un double compris entre 0 et 1 de manière uniforme
-
-        //cout << alpha << endl;
 
         if (u < alpha){ // cas où on accepte Y
             res.push_back(Y);

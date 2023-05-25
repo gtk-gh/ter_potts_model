@@ -94,3 +94,14 @@ matrice update_configuration( matrice& config, matrice& clusters){
     }
     return new_config;
 }
+
+vector<matrice> sw(int n,matrice & X0,double beta){
+    vector<matrice> res;
+    vector<matrice> clusters;
+    res.push_back(X0);
+    for (int i = 0; i<n; i++){
+        clusters.push_back(generate_clusters(res[i-1],beta));
+        res.push_back(update_configuration(res[i-1],clusters[i-1]));
+    }
+    return res;
+}

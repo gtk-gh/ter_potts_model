@@ -10,3 +10,4 @@
 
 matrice generate_clusters(matrice& config, double beta );
 matrice update_configuration(matrice& config, matrice& clusters);
+vector<matrice> sw(int n,matrice & X0,double beta);

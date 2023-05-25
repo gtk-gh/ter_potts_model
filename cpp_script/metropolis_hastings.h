@@ -15,7 +15,8 @@ int sim(int,int,vector<int>); // renvoie la similarité entre deux points
 
 vector<int> voisin(int,matrice &); // renvoie les voisins d'un point
 
-double p_T_z(double T, matrice & M,vector<int> simil); // fonction cible de MH
+double p_T_z2(double T, matrice & M,vector<int> simil); // fonction cible de MH
+
 
 vector<matrice> mh1(int n, matrice & X0,double,vector<int> simil); // Metropolis Hasting
 
