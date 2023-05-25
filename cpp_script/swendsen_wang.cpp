@@ -4,10 +4,6 @@
 
 #include "swendsen_wang.h"
 #include <iostream>
-#include <time.h>
-#include <unistd.h>
-
-
 using namespace std;
 
 

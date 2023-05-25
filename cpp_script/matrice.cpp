@@ -55,7 +55,6 @@ matrice::matrice(int n,int m,vector<double> sommets,vector<double> etat){
 matrice::~matrice()
 {
     sommet.clear();
-    //cout << "La matrice : " << this << " a été supprimé." << endl;
 }
 
 int matrice::getSize1(){
@@ -89,10 +88,6 @@ matrice& matrice::operator = (const matrice& mat){
             this->sommet.push_back(temp2);
         }
     }
-
-    //vector<shared_ptr<point>> matS = mat.sommet;
-    //    for (const auto& e : matS)
-    //        this->sommet.push_back(e->clone());
     return (*this);
 }
 

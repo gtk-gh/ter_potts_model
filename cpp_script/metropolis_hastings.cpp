@@ -20,7 +20,6 @@ matrice q(const matrice & M){
     shared_ptr<point> sommetPtr = (res.getSommet(randU));
     double etatValue = etat[randV];
     changeEtat(sommetPtr, etatValue);
-    //changeEtat(sommetPtr, (int(sommetPtr->getEtat()) +1) %2);
     return res;
 }
 
@@ -88,7 +87,7 @@ int sim(int i, int j, vector<int> classes){
     // exemple : [ 0 , 1, 0 ,1 ,2 ,2] ici le sommet 0 et 2 n'ont aucune similarité avec d'autres sommets,
     // le sommet 1 et 3 ont les memes similarités et le 4 et 5 aussi.
     int res = 0;
-    if ((classes[i] == classes[j]) && (classes[i] != 0)){
+    if ((classes[i] == classes[j])){
         res = 1;
     }
     return res;
@@ -121,14 +120,10 @@ double p_T_z(double T, matrice & M, vector<int> simil){
             if (find(voisinage.begin(), voisinage.end(), j) != voisinage.end()){
                 s = sim(i, j, simil);
             }
-            //s = sim(i, j, simil);
-            // on calcule s
-            //s = 1;
-            // on rajoute au res
             res = res + (1-delta)*s;
         }
     }
-    return exp(-(1/(2*T))*res); // Renvoi 0, car trop grande valeur dans l'exponentielle
+    return exp(-(1/T)*res); // Renvoi 0, car trop grande valeur dans l'exponentielle
 }
 
 vector<matrice> mh1(int n, matrice & X0, double T,vector<int> simil){
@@ -152,6 +147,8 @@ vector<matrice> mh1(int n, matrice & X0, double T,vector<int> simil){
 
         double u = ((double)rand()/(double)RAND_MAX); //génération d'un double compris entre 0 et 1 de manière uniforme
 
+        //cout << alpha << endl;
+
         if (u < alpha){ // cas où on accepte Y
             res.push_back(Y);
             accept++;
@@ -161,7 +158,6 @@ vector<matrice> mh1(int n, matrice & X0, double T,vector<int> simil){
         }
 
     }
-    cout << "Il y à eu "<<accept<<" acceptations." << endl <<"Ce qui fait un taux d'acceptation de "<<double(accept)/n<<".";
-   // cout << endl << res[n-1];
+    cout << "Il y a eu "<<accept<<" acceptations." << endl <<"Ce qui fait un taux d'acceptation de "<<double(accept)/n<<".";
     return res;
 }
