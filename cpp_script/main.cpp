@@ -53,16 +53,34 @@ int main() {
 
 
 
-    matrice M = matrice(size,size,etat);
-    int n = 100;
+    matrice M = matrice(size,size,som,etat);
+    int n = 500;
     vector<matrice> MH1;
-    //MH1 = mh1(n,M,1,simil);
-    MH1 = sw(n,M,0.5);
+    vector<matrice> SW1;
+
+    auto start = std::chrono::high_resolution_clock::now();
+
+    MH1 = mh1(n,M,7,simil);
+    auto stop = std::chrono::high_resolution_clock::now();
+    auto duration = duration_cast<chrono::seconds>(stop - start);
+    cout <<endl << "Pour " << n << " itérations Métropolis-Hasting s'est exécuté en " << duration.count() << " seconde(s)." << endl;
+
+    start = std::chrono::high_resolution_clock::now();
+    SW1 = sw(n,M,1);
+    stop = std::chrono::high_resolution_clock::now();
+    duration = duration_cast<chrono::seconds>(stop - start);
+    cout << "Pour " << n << " itérations Swendsen-Wang s'est exécuté en " << duration.count() << " seconde(s).";
 
     vector<matrice> mh2;
-    //mh2.push_back(MH1[0]);
-    //mh2.push_back(MH1[n-2]);
-    //save_matr2("../../py_script/extrait.txt", mh2);
-    //save_matr2("../../py_script/full.txt", MH1);
+    mh2.push_back(MH1[0]);
+    mh2.push_back(MH1[n-1]);
+    vector<matrice> sw2;
+    sw2.push_back(SW1[0]);
+    sw2.push_back(SW1[n-1]);
+
+    save_matr2("../../py_script/extraitmh.txt", mh2);
+    save_matr2("../../py_script/fullmh.txt", MH1);
+    save_matr2("../../py_script/extraitsw.txt", sw2);
+    save_matr2("../../py_script/fullsw.txt", SW1);
     return 0;
 }

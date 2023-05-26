@@ -4,6 +4,10 @@
 
 #include "swendsen_wang.h"
 #include <iostream>
+#include <algorithm>
+#include <random>
+#include <chrono>
+
 using namespace std;
 
 
@@ -71,7 +75,6 @@ matrice generate_clusters(matrice& config, double beta ){
 matrice update_configuration( matrice& config, matrice& clusters){
     int n = clusters.getSize1();
     int E = normeinf(config.getVecEtat());
-    cout << E;
     matrice new_config(n,n,config.getVecEtat());
 
     random_device rd;
@@ -99,7 +102,7 @@ vector<matrice> sw(int n,matrice & X0,double beta){
     vector<matrice> res;
     vector<matrice> clusters;
     res.push_back(X0);
-    for (int i = 0; i<n; i++){
+    for (int i = 1; i<n; i++){
         clusters.push_back(generate_clusters(res[i-1],beta));
         res.push_back(update_configuration(res[i-1],clusters[i-1]));
     }
